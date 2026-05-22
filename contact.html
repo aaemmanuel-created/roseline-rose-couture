@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Contact &amp; Appointments &mdash; Roseline Rose Couture</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Marcellus&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- Verse strip -->
+<div class="verse-strip">
+  <span>&ldquo;She is clothed with strength and dignity; she can laugh at the days to come.&rdquo;</span>
+  <span class="sep"></span>
+  <span class="ref">Proverbs 31 &middot; 25</span>
+</div>
+
+<!-- Header -->
+<header class="site-header">
+  <nav class="nav container" aria-label="Primary">
+    <div class="nav-left">
+      <a class="navlink" href="index.html">Maison</a>
+      <a class="navlink" href="collections.html">Collections</a>
+      <a class="navlink" href="lookbook.html">Lookbook</a>
+    </div>
+    <a class="wordmark" href="index.html" aria-label="Roseline Rose Couture">
+      <span class="rrc">ROSELINE&nbsp;ROSE</span>
+      <span class="tag">&mdash; couture maison &mdash;</span>
+    </a>
+    <div class="nav-right">
+      <a class="navlink" href="about.html">Atelier</a>
+      <a class="navlink" href="journal.html">Journal</a>
+      <a class="navlink active" href="contact.html">Contact</a>
+      <a class="icon-btn" href="#" aria-label="Account">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8" stroke-linecap="round"/></svg>
+      </a>
+    </div>
+  </nav>
+</header>
+
+<!-- Page head -->
+<section class="page-head">
+  <div class="container">
+    <div class="breadcrumbs"><a href="index.html">Maison</a> &nbsp;/&nbsp; Contact &amp; Appointments</div>
+    <h1>Write to the <em>atelier.</em></h1>
+    <p class="lede">
+      Whether for a fitting, a bespoke commission, or simply a word &mdash; we read every message,
+      gently and personally. A reply usually follows within two working days.
+    </p>
+  </div>
+</section>
+
+<!-- Contact grid -->
+<section class="section" id="inquire">
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- Form -->
+      <form class="contact-form" onsubmit="event.preventDefault(); this.querySelector('.sent').hidden = false; this.scrollIntoView({behavior:'smooth', block:'start'});">
+        <div class="eyebrow"><span>Begin a conversation</span></div>
+        <h2 style="font-family: var(--display); font-size: clamp(34px, 4vw, 52px); font-weight: 400; margin: 14px 0 28px; line-height: 1.05;">A note, <em style="font-family: var(--serif); font-style: italic; color: var(--rose);">in your own hand.</em></h2>
+
+        <div class="row-2">
+          <div class="field">
+            <label for="f-first">First name</label>
+            <input id="f-first" name="first" type="text" placeholder="Roseline" required />
+          </div>
+          <div class="field">
+            <label for="f-last">Last name</label>
+            <input id="f-last" name="last" type="text" placeholder="Of the rose" required />
+          </div>
+        </div>
+
+        <div class="row-2">
+          <div class="field">
+            <label for="f-email">Email</label>
+            <input id="f-email" name="email" type="email" placeholder="you@maison.com" required />
+          </div>
+          <div class="field">
+            <label for="f-phone">Telephone <span style="text-transform:none; letter-spacing:0; font-style:italic; font-family: var(--serif); color: var(--ink-mute);">(optional)</span></label>
+            <input id="f-phone" name="phone" type="tel" placeholder="+33 ..." />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="f-reason">I am writing about</label>
+          <select id="f-reason" name="reason">
+            <option>A fitting &middot; ready-to-order</option>
+            <option>A bespoke commission</option>
+            <option>A bridal piece</option>
+            <option>Press &amp; editorial</option>
+            <option>Stockists &amp; trunk shows</option>
+            <option>A general inquiry</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="f-date">Preferred date <span style="text-transform:none; letter-spacing:0; font-style:italic; font-family: var(--serif); color: var(--ink-mute);">(approximate)</span></label>
+          <input id="f-date" name="date" type="text" placeholder="Late June, a Saturday morning" />
+        </div>
+
+        <div class="field">
+          <label for="f-msg">Your message</label>
+          <textarea id="f-msg" name="message" rows="5" placeholder="A few lines about what you are imagining &mdash; the occasion, the cloth, the mood. There is no wrong way to begin." required></textarea>
+        </div>
+
+        <div style="display:flex; align-items:center; gap:18px; flex-wrap:wrap;">
+          <button type="submit" class="btn">Send the note <span class="arrow">&rarr;</span></button>
+          <p style="font-family: var(--serif); font-style: italic; color: var(--ink-mute); font-size: 14px; margin: 0;">
+            We reply within two working days &mdash; always by hand.
+          </p>
+        </div>
+
+        <p class="sent" hidden style="margin-top: 28px; padding: 18px 20px; background: var(--paper); border-left: 2px solid var(--rose); font-family: var(--serif); font-style: italic; color: var(--ink-soft);">
+          Thank you &mdash; your note has been placed on the cutting table. We&rsquo;ll write back soon.
+        </p>
+      </form>
+
+      <!-- Info -->
+      <aside class="contact-info">
+        <div class="eyebrow"><span>The atelier</span></div>
+        <h2 style="font-family: var(--display); font-size: clamp(34px, 4vw, 52px); font-weight: 400; margin: 14px 0 28px; line-height: 1.05;">By appointment, <em style="font-family: var(--serif); font-style: italic; color: var(--rose);">in person.</em></h2>
+
+        <div class="block">
+          <div class="lbl">By email</div>
+          <div class="val"><em>atelier</em>@roselinerose.com</div>
+          <div class="sub">For new commissions, fittings, and general inquiries.</div>
+        </div>
+
+        <div class="block">
+          <div class="lbl">By telephone</div>
+          <div class="val">+33 <em>1 76 42 08 90</em></div>
+          <div class="sub">Tuesday through Saturday, 10h &mdash; 18h CET.</div>
+        </div>
+
+        <div class="block">
+          <div class="lbl">In person</div>
+          <div class="val">The Atelier, <em>by appointment</em></div>
+          <div class="sub">7 Rue des Petits Champs &middot; Paris, France<br/>And a second studio in Lagos, by season.</div>
+        </div>
+
+        <div class="block">
+          <div class="lbl">Press &amp; editorial</div>
+          <div class="val"><em>press</em>@roselinerose.com</div>
+          <div class="sub">Stockists, lookbook copies, and editorial requests.</div>
+        </div>
+
+        <div class="block">
+          <div class="lbl">Found on</div>
+          <div class="val">Instagram &middot; <em>@roselinerose</em></div>
+          <div class="sub">The slow scroll &mdash; petals, fittings, and the occasional verse.</div>
+        </div>
+
+        <div style="margin-top: 36px;">
+          <a class="btn ghost" href="about.html">About the atelier</a>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</section>
+
+<!-- Appointment band -->
+<section class="appointment section">
+  <div class="container">
+    <div>
+      <div class="eyebrow"><span>A first visit</span><span class="dot"></span><span>What to expect</span></div>
+      <h2>Tea is poured. <em>Time is unhurried.</em></h2>
+      <p>
+        A first appointment lasts an unhurried hour. We speak, we sketch, we measure if you are ready.
+        Nothing is signed; everything is held. You will leave with a sketch and a held promise.
+      </p>
+      <div style="display:flex; gap:14px; flex-wrap:wrap;">
+        <a class="btn" href="#inquire">Send a note</a>
+        <a class="btn ghost" href="lookbook.html">Open the lookbook</a>
+      </div>
+    </div>
+
+    <div class="appointment-card">
+      <div class="eyebrow"><span class="dot" style="background: var(--rose);"></span><span>The first hour</span></div>
+      <h3>How a visit unfolds</h3>
+      <div class="row"><div class="lbl">Arrival</div><div class="val">Tea, conversation, sketchbook.</div></div>
+      <div class="row"><div class="lbl">Listening</div><div class="val">The occasion, the wish, the cloth.</div></div>
+      <div class="row"><div class="lbl">Measure</div><div class="val">If ready &mdash; fifty-three points, by hand.</div></div>
+      <div class="row"><div class="lbl">Sketch</div><div class="val">A first drawing, yours to keep.</div></div>
+      <div class="row"><div class="lbl">After</div><div class="val">A quote follows, with no pressure.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="brand">
+        <span class="rrc">ROSELINE&nbsp;ROSE</span>
+        <p class="tag">Couture maison for women and men. Refined, unhurried, made by hand and guided by faith.</p>
+        <p class="verse">&ldquo;She openeth her mouth with wisdom; and in her tongue is the law of kindness.&rdquo; &mdash; Proverbs 31 &middot; 26</p>
+      </div>
+      <div>
+        <h4>Maison</h4>
+        <ul>
+          <li><a href="about.html">Our story</a></li>
+          <li><a href="about.html#atelier">The atelier</a></li>
+          <li><a href="about.html#philosophy">Philosophy</a></li>
+          <li><a href="journal.html">Journal</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Collections</h4>
+        <ul>
+          <li><a href="collections.html">Congo in Naija</a></li>
+          <li><a href="collections.html?cat=bridal">Bridal &amp; occasion</a></li>
+          <li><a href="collections.html?cat=men">Pour Lui</a></li>
+          <li><a href="lookbook.html">The lookbook</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="contact.html">Book a fitting</a></li>
+          <li><a href="contact.html#inquire">General inquiries</a></li>
+          <li><a href="#">Instagram &middot; @roselinerose</a></li>
+          <li><a href="mailto:atelier@roselinerose.com">atelier@roselinerose.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>&copy; 2026 Roseline Rose Couture &middot; All creations sewn by hand.</div>
+      <div class="links">
+        <a href="#">Privacy</a>
+        <a href="#">Care &amp; tailoring</a>
+        <a href="#">Site credits</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
