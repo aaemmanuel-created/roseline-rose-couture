@@ -2,6 +2,8 @@
 
 A six-page preview site for **Roseline Rose Couture** — a small couture maison for women and men, refined, unhurried, made by hand and guided by faith.
 
+**Live at:** https://aaemmanuel-created.github.io/roseline-rose-couture/
+
 > *"She is clothed with strength and dignity; she can laugh at the days to come."* — Proverbs 31:25
 
 ## Pages
