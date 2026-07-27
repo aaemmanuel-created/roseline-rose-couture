@@ -3,164 +3,109 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Collections &mdash; Roseline Rose Couture</title>
+<title>Royal Choice &mdash; Roseline Rose Couture</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Marcellus&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-
-<!-- Header -->
-<header class="site-header">
-  <nav class="nav container" aria-label="Primary">
-    <div class="nav-left">
-      <a class="navlink" href="index.html">Maison</a>
-      <a class="navlink active" href="collections.html">Collections</a>
-      <a class="navlink" href="lookbook.html">Lookbook</a>
-    </div>
-    <a class="wordmark" href="index.html" aria-label="Roseline Rose Couture">
-      <span class="rrc">ROSELINE&nbsp;ROSE</span>
-      <span class="tag">&mdash; couture maison &mdash;</span>
-    </a>
-    <div class="nav-right">
-      <a class="navlink" href="about.html">Atelier</a>
-      <a class="navlink" href="journal.html">Journal</a>
-      <a class="navlink" href="contact.html">Contact</a>
-      <a class="icon-btn" href="#" aria-label="Account">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8" stroke-linecap="round"/></svg>
-      </a>
-    </div>
-  </nav>
+<header class="topbar">
+  <div class="inner">
+    <a class="logo" href="index.html">Roseline&nbsp;Rose</a>
+    <nav class="menu" aria-label="Primary">
+      <a class="active" href="collections.html">Collection</a>
+      <a href="lookbook.html">Lookbook</a>
+      <a href="about.html">Atelier</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
 </header>
 
-<!-- Page head -->
 <section class="page-head">
   <div class="container">
-    <div class="breadcrumbs"><a href="index.html">Maison</a> &nbsp;/&nbsp; Collections</div>
-    <h1>Royal <em>Choice</em></h1>
-    <p class="lede">
-      The Royal Choice collection, photographed in warm light. Click any outfit to open
-      its gallery and slide through every angle and pose.
-    </p>
+    <div class="eyebrow">The New Collection</div>
+    <h1 class="display">Royal Choice</h1>
+    <p class="sub">Tap a look. Slide through every angle.</p>
   </div>
 </section>
 
-<!-- Outfit galleries -->
-<section class="section tight">
+<section class="band tight">
   <div class="container">
-    <div class="coll-filter">
-      <div class="filters">
-        <a href="#" class="active">All outfits</a>
-      </div>
-      <div class="count">12 galleries &middot; Royal Choice</div>
-    </div>
+    <div class="looks-grid wide">
 
-    <div class="product-grid">
-
-      <a class="product" href="#" data-gallery="red-long" aria-label="Open the Red Long Dress gallery">
-        <div class="imgph photo" data-label="Gallery"><img src="img/orange-01.jpg" alt="The Red Long Dress — high-neck with draped sash" loading="lazy" /><span class="ph-count">5 photos</span></div>
-        <h3 class="name">The Red <em>Long</em> Dress</h3>
-        <div class="meta"><span>High-neck &middot; draped sash</span><span>Gallery</span></div>
+      <a class="look" href="#" data-gallery="red-long">
+        <div class="ph"><img src="img/orange-01.jpg" alt="The Red Long Dress" loading="lazy" /><span class="count">5</span></div>
+        <div class="name">The Red Long Dress</div>
       </a>
 
-      <a class="product" href="#" data-gallery="blue" aria-label="Open the Blue Dress gallery">
-        <div class="imgph photo" data-label="Gallery"><img src="img/cobalt-01.jpg" alt="The Blue Dress — crossneck halter in cobalt" loading="lazy" /><span class="ph-count">8 photos</span></div>
-        <h3 class="name">The Blue <em>Dress</em></h3>
-        <div class="meta"><span>Crossneck halter &middot; draped</span><span>Gallery</span></div>
+      <a class="look" href="#" data-gallery="blue">
+        <div class="ph"><img src="img/cobalt-01.jpg" alt="The Blue Dress" loading="lazy" /><span class="count">8</span></div>
+        <div class="name">The Blue Dress</div>
       </a>
 
-      <a class="product" href="#" data-gallery="purple-mini" aria-label="Open the Purple Mini gallery">
-        <div class="imgph photo" data-label="Gallery"><img src="img/lilac-mini-01.jpg" alt="The Purple Mini — crossneck with long sash" loading="lazy" /><span class="ph-count">6 photos</span></div>
-        <h3 class="name">The Purple <em>Mini</em></h3>
-        <div class="meta"><span>Crossneck mini &middot; sash</span><span>Gallery</span></div>
+      <a class="look" href="#" data-gallery="purple-mini">
+        <div class="ph"><img src="img/lilac-mini-01.jpg" alt="The Purple Mini" loading="lazy" /><span class="count">6</span></div>
+        <div class="name">The Purple Mini</div>
       </a>
 
-      <a class="product" href="#" data-gallery="purple-lace" aria-label="Open the Purple Lace Dress gallery">
-        <div class="imgph photo" data-label="Gallery"><img src="img/purple-lace-02.jpg" alt="The Purple Lace Dress — strapless with neck scarf" loading="lazy" /><span class="ph-count">3 photos</span></div>
-        <h3 class="name">The Purple <em>Lace</em> Dress</h3>
-        <div class="meta"><span>Strapless &middot; neck scarf</span><span>Gallery</span></div>
+      <a class="look" href="#" data-gallery="purple-lace">
+        <div class="ph"><img src="img/purple-lace-02.jpg" alt="The Purple Lace Dress" loading="lazy" /><span class="count">3</span></div>
+        <div class="name">The Purple Lace Dress</div>
       </a>
 
-      <a class="product" href="#" data-gallery="purple-velvet" aria-label="Open the Purple Velvet Gown gallery">
-        <div class="imgph photo" data-label="Gallery"><img src="img/velvet-01.jpg" alt="The Purple Velvet Gown — corset bodice with long drape" loading="lazy" /><span class="ph-count">4 photos</span></div>
-        <h3 class="name">The Purple <em>Velvet</em> Gown</h3>
-        <div class="meta"><span>Corset bodice &middot; long drape</span><span>Gallery</span></div>
+      <a class="look" href="#" data-gallery="purple-velvet">
+        <div class="ph"><img src="img/velvet-01.jpg" alt="The Purple Velvet Gown" loading="lazy" /><span class="count">4</span></div>
+        <div class="name">The Purple Velvet Gown</div>
       </a>
 
-      <a class="product" href="#" data-gallery="purple-together" aria-label="Open the purple duo gallery">
-        <div class="imgph photo" data-label="Gallery"><img src="img/group-01.jpg" alt="The purple looks together — two models" loading="lazy" /><span class="ph-count">3 photos</span></div>
-        <h3 class="name">Purple, <em>Together</em></h3>
-        <div class="meta"><span>Two looks &middot; one hue</span><span>Gallery</span></div>
+      <a class="look" href="#" data-gallery="purple-together">
+        <div class="ph"><img src="img/group-01.jpg" alt="Purple, together" loading="lazy" /><span class="count">3</span></div>
+        <div class="name">Purple, <em>Together</em></div>
       </a>
 
-      <a class="product" href="#" data-gallery="fringe-red" aria-label="Open the Red Fringe Dress gallery">
-        <div class="imgph photo" data-label="Gallery"><img src="img/fringe-red-01.jpg" alt="The Red Fringe Dress — high-neck with fringe skirt" loading="lazy" /><span class="ph-count">3 photos</span></div>
-        <h3 class="name">The Red <em>Fringe</em> Dress</h3>
-        <div class="meta"><span>High-neck &middot; fringe hem</span><span>Gallery</span></div>
+      <a class="look" href="#" data-gallery="fringe-red">
+        <div class="ph"><img src="img/fringe-red-01.jpg" alt="The Red Fringe Dress" loading="lazy" /><span class="count">3</span></div>
+        <div class="name">The Red Fringe Dress</div>
       </a>
 
-      <a class="product" href="#" data-gallery="fringe-yellow" aria-label="Open the Yellow Fringe Dress gallery">
-        <div class="imgph photo" data-label="Gallery"><img src="img/fringe-yellow-01.jpg" alt="The Yellow Fringe Dress — high-neck with fringe skirt" loading="lazy" /><span class="ph-count">4 photos</span></div>
-        <h3 class="name">The Yellow <em>Fringe</em> Dress</h3>
-        <div class="meta"><span>High-neck &middot; fringe hem</span><span>Gallery</span></div>
+      <a class="look" href="#" data-gallery="fringe-yellow">
+        <div class="ph"><img src="img/fringe-yellow-01.jpg" alt="The Yellow Fringe Dress" loading="lazy" /><span class="count">4</span></div>
+        <div class="name">The Yellow Fringe Dress</div>
       </a>
 
-      <a class="product" href="#" data-gallery="fringe-blue" aria-label="Open the Blue Fringe Dress gallery">
-        <div class="imgph photo" data-label="Gallery"><img src="img/fringe-blue-01.jpg" alt="The Blue Fringe Dress — pale blue with fringe skirt" loading="lazy" /><span class="ph-count">1 photo</span></div>
-        <h3 class="name">The Blue <em>Fringe</em> Dress</h3>
-        <div class="meta"><span>Pale blue &middot; fringe hem</span><span>Gallery</span></div>
+      <a class="look" href="#" data-gallery="fringe-blue">
+        <div class="ph"><img src="img/fringe-blue-01.jpg" alt="The Blue Fringe Dress" loading="lazy" /><span class="count">1</span></div>
+        <div class="name">The Blue Fringe Dress</div>
       </a>
 
-      <a class="product" href="#" data-gallery="fringe-pink" aria-label="Open the Pink Fringe Dress gallery">
-        <div class="imgph photo" data-label="Gallery"><img src="img/fringe-pink-01.jpg" alt="The Pink Fringe Dress — on the terrace" loading="lazy" /><span class="ph-count">2 photos</span></div>
-        <h3 class="name">The Pink <em>Fringe</em> Dress</h3>
-        <div class="meta"><span>Fuchsia &middot; fringe hem</span><span>Gallery</span></div>
+      <a class="look" href="#" data-gallery="fringe-pink">
+        <div class="ph"><img src="img/fringe-pink-01.jpg" alt="The Pink Fringe Dress" loading="lazy" /><span class="count">2</span></div>
+        <div class="name">The Pink Fringe Dress</div>
       </a>
 
-      <a class="product" href="#" data-gallery="fringe-together" aria-label="Open the fringe ensemble gallery">
-        <div class="imgph photo" data-label="Gallery"><img src="img/fringe-duo-04.jpg" alt="The fringe line together — three looks outdoors" loading="lazy" /><span class="ph-count">4 photos</span></div>
-        <h3 class="name">Fringe, <em>Together</em></h3>
-        <div class="meta"><span>The fringe line &middot; ensembles</span><span>Gallery</span></div>
+      <a class="look" href="#" data-gallery="fringe-together">
+        <div class="ph"><img src="img/fringe-duo-04.jpg" alt="The fringe line, together" loading="lazy" /><span class="count">4</span></div>
+        <div class="name">Fringe, <em>Together</em></div>
       </a>
 
-      <a class="product" href="#" data-gallery="together" aria-label="Open the ensemble gallery">
-        <div class="imgph photo" data-label="Gallery"><img src="img/group-02.jpg" alt="The collection together — ensemble photographs" loading="lazy" /><span class="ph-count">4 photos</span></div>
-        <h3 class="name">Together &middot; <em>The Collection</em></h3>
-        <div class="meta"><span>Ensemble portraits</span><span>Gallery</span></div>
+      <a class="look" href="#" data-gallery="together">
+        <div class="ph"><img src="img/group-02.jpg" alt="The collection, together" loading="lazy" /><span class="count">4</span></div>
+        <div class="name">Together</div>
       </a>
 
     </div>
   </div>
 </section>
 
-<hr class="divider soft" />
-
-<!-- Appointment band -->
-<section class="appointment section">
+<!-- CTA -->
+<section class="band center">
   <div class="container">
-    <div>
-      <div class="eyebrow"><span>The Atelier</span><span class="dot"></span><span>Made to your form</span></div>
-      <h2>Each piece, <em>made to you.</em></h2>
-      <p>
-        Every creation in the collection is finished in the atelier to your exact measurements.
-        Begin with a fitting &mdash; tea is poured, time is unhurried, and a sketch is held in your hands before you leave.
-      </p>
-      <div style="display:flex; gap:14px; flex-wrap:wrap;">
-        <a class="btn" href="contact.html">Book a fitting</a>
-        <a class="btn ghost" href="lookbook.html">Open the lookbook</a>
-      </div>
-    </div>
-
-    <div class="appointment-card">
-      <div class="eyebrow"><span class="dot" style="background: var(--rose);"></span><span>Commission notes</span></div>
-      <h3>The journey</h3>
-      <div class="row"><div class="lbl">First fitting</div><div class="val">Conversation, measure, sketch.</div></div>
-      <div class="row"><div class="lbl">Second fitting</div><div class="val">Toile in calico, shaped to you.</div></div>
-      <div class="row"><div class="lbl">Third fitting</div><div class="val">Final cloth, last hand-stitching.</div></div>
-      <div class="row"><div class="lbl">Delivery</div><div class="val">Wrapped in silk &amp; paper.</div></div>
-      <div class="row"><div class="lbl">Care</div><div class="val">A lifetime of gentle mending.</div></div>
+    <div class="eyebrow" style="margin-bottom: 16px;">Made to order</div>
+    <h2 class="display">Tailored to you.</h2>
+    <div class="cta-row">
+      <a class="btn" href="contact.html">Book a fitting</a>
     </div>
   </div>
 </section>
@@ -168,47 +113,21 @@
 <!-- Footer -->
 <footer class="site-footer">
   <div class="container">
-    <div class="footer-grid">
+    <div class="grid">
       <div class="brand">
-        <span class="rrc">ROSELINE&nbsp;ROSE</span>
-        <p class="tag">Couture maison for women and men. Refined, unhurried, made by hand and guided by faith.</p>
-        <p class="verse">&ldquo;She openeth her mouth with wisdom; and in her tongue is the law of kindness.&rdquo; &mdash; Proverbs 31 &middot; 26</p>
+        <span class="logo">Roseline&nbsp;Rose</span>
+        <p>Couture maison. Royal Choice &mdash; the new collection.</p>
       </div>
-      <div>
-        <h4>Maison</h4>
-        <ul>
-          <li><a href="about.html">Our story</a></li>
-          <li><a href="about.html#atelier">The atelier</a></li>
-          <li><a href="about.html#philosophy">Philosophy</a></li>
-          <li><a href="journal.html">Journal</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Collections</h4>
-        <ul>
-          <li><a href="collections.html">Royal Choice</a></li>
-          <li><a href="collections.html?cat=bridal">Bridal &amp; occasion</a></li>
-          <li><a href="collections.html?cat=men">Pour Lui</a></li>
-          <li><a href="lookbook.html">The lookbook</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="contact.html">Book a fitting</a></li>
-          <li><a href="contact.html#inquire">General inquiries</a></li>
-          <li><a href="#">Instagram &middot; @roselinerose</a></li>
-          <li><a href="mailto:atelier@roselinerose.com">atelier@roselinerose.com</a></li>
-        </ul>
-      </div>
+      <nav>
+        <a href="collections.html">Collection</a>
+        <a href="lookbook.html">Lookbook</a>
+        <a href="about.html">Atelier</a>
+        <a href="contact.html">Contact</a>
+      </nav>
     </div>
-    <div class="footer-bottom">
-      <div>&copy; 2026 Roseline Rose Couture &middot; All creations sewn by hand.</div>
-      <div class="links">
-        <a href="#">Privacy</a>
-        <a href="#">Care &amp; tailoring</a>
-        <a href="#">Site credits</a>
-      </div>
+    <div class="base">
+      <span>&copy; 2026 Roseline Rose Couture</span>
+      <span>Sewn by hand</span>
     </div>
   </div>
 </footer>
@@ -325,7 +244,7 @@ const GALLERIES = {
     ]
   },
   "together": {
-    title: "Together · The Collection",
+    title: "Together",
     photos: [
       { src: "img/group-02.jpg", alt: "The collection — four looks, wide" },
       { src: "img/group-05.jpg", alt: "The collection — four looks, close" },
@@ -387,7 +306,6 @@ const GALLERIES = {
     if (e.key === "ArrowRight") step(1);
   });
 
-  // Basic swipe support
   let touchX = null;
   lb.addEventListener("touchstart", function (e) { touchX = e.touches[0].clientX; }, { passive: true });
   lb.addEventListener("touchend", function (e) {

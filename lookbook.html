@@ -3,208 +3,87 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>The Lookbook &mdash; Roseline Rose Couture</title>
+<title>Lookbook &mdash; Roseline Rose Couture</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Marcellus&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-
-<!-- Header -->
-<header class="site-header">
-  <nav class="nav container" aria-label="Primary">
-    <div class="nav-left">
-      <a class="navlink" href="index.html">Maison</a>
-      <a class="navlink" href="collections.html">Collections</a>
-      <a class="navlink active" href="lookbook.html">Lookbook</a>
-    </div>
-    <a class="wordmark" href="index.html" aria-label="Roseline Rose Couture">
-      <span class="rrc">ROSELINE&nbsp;ROSE</span>
-      <span class="tag">&mdash; couture maison &mdash;</span>
-    </a>
-    <div class="nav-right">
-      <a class="navlink" href="about.html">Atelier</a>
-      <a class="navlink" href="journal.html">Journal</a>
-      <a class="navlink" href="contact.html">Contact</a>
-      <a class="icon-btn" href="#" aria-label="Account">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8" stroke-linecap="round"/></svg>
-      </a>
-    </div>
-  </nav>
+<header class="topbar">
+  <div class="inner">
+    <a class="logo" href="index.html">Roseline&nbsp;Rose</a>
+    <nav class="menu" aria-label="Primary">
+      <a href="collections.html">Collection</a>
+      <a class="active" href="lookbook.html">Lookbook</a>
+      <a href="about.html">Atelier</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
 </header>
 
-<!-- Lookbook hero -->
-<section class="lookbook-hero">
-  <div class="imgph photo dark" data-label="Cover &middot; Editorial summer">
-    <img src="img/fringe-duo-04.jpg" alt="Cover — three fringe looks outdoors" />
-  </div>
-  <div class="inner">
-    <div class="eyebrow"><span>The Lookbook</span><span class="dot"></span><span>Royal Choice</span></div>
-    <h1>A garden, <em>quietly</em> tended.</h1>
-    <p class="sub">Editorial portraits in linen, silk &amp; hand-finished embroidery.</p>
-  </div>
-</section>
-
-<!-- Intro band -->
-<section class="section manifesto">
+<section class="page-head">
   <div class="container">
-    <div class="flourish">
-      <span class="line"></span>
-      <svg class="rose-mark" width="36" height="36" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="0.9">
-        <path d="M11 4.5c-2 0-3.5 1.4-3.5 3.2 0 1.4.9 2.3 2.1 2.6-1.3.2-2.6 1.2-2.6 2.9 0 1.7 1.4 3 3.2 3 1 0 1.7-.3 2.3-.9.6.6 1.3.9 2.3.9 1.8 0 3.2-1.3 3.2-3 0-1.7-1.3-2.7-2.6-2.9 1.2-.3 2.1-1.2 2.1-2.6 0-1.8-1.5-3.2-3.5-3.2-.7 0-1.4.2-1.9.7-.5-.5-1.2-.7-1.9-.7Z"/>
-      </svg>
-      <span class="line"></span>
-    </div>
-    <p class="opening">
-      Six frames, each a <em>meditation</em> on growth. The light is held a moment longer.
-      The needle rests. The garment <em>breathes</em>.
-    </p>
-    <p class="verse">
-      &ldquo;He hath made every thing beautiful in his time.&rdquo;
-      <span class="ref">Ecclesiastes 3 &middot; 11</span>
-    </p>
+    <div class="eyebrow">Royal Choice</div>
+    <h1 class="display">The Lookbook</h1>
   </div>
 </section>
 
-<!-- Editorial spreads -->
 <section class="container">
 
-  <article class="editorial-spread">
-    <div class="grid">
-      <div>
-        <div class="number">01</div>
-        <div class="eyebrow"><span>Garden light</span></div>
-        <h3>Where the morning <em>finds her.</em></h3>
-        <p>The opening frame &mdash; ivory linen and a hand of mist. The light is not posed; it is
-        permitted. She turns her shoulder toward it the way one greets a friend.</p>
-        <p>Worn: L&rsquo;Aube en Rose, No. 01, with the Petale slip beneath.</p>
-        <a class="link-arrow" href="collections.html">See the look in collection &rarr;</a>
-      </div>
-      <div class="imgph photo solo" data-label="01 &middot; Garden light">
-        <img src="img/purple-lace-01.jpg" alt="The Purple Lace Dress — by the palm" loading="lazy" />
-      </div>
-    </div>
-  </article>
+  <div class="frame full">
+    <img src="img/fringe-duo-04.jpg" alt="Three fringe looks, outdoors" />
+    <div class="cap"><span>01</span><span>The fringe line</span></div>
+  </div>
 
-  <article class="editorial-spread reverse">
-    <div class="grid">
-      <div class="stack-imgs">
-        <div class="imgph photo blush" data-label="02a &middot; Fringe, red">
-          <img src="img/fringe-red-02.jpg" alt="The Red Fringe Dress — hand raised" loading="lazy" />
-        </div>
-        <div class="imgph photo" data-label="02b &middot; Fringe, yellow">
-          <img src="img/fringe-yellow-02.jpg" alt="The Yellow Fringe Dress — by the window" loading="lazy" />
-        </div>
-      </div>
-      <div>
-        <div class="number">02</div>
-        <div class="eyebrow"><span>Sleeve study</span></div>
-        <h3>A petal, <em>opened slowly.</em></h3>
-        <p>Two frames of a single sleeve &mdash; the way a rose discloses itself. Hand-pulled
-        French knots in matte silk over hand-loomed organza. Each knot is its own small prayer.</p>
-        <p>Worn: Petale Blouse, No. 06.</p>
-      </div>
+  <div class="frame">
+    <div class="frame-pair">
+      <img src="img/fringe-red-02.jpg" alt="The Red Fringe Dress" loading="lazy" />
+      <img src="img/fringe-yellow-02.jpg" alt="The Yellow Fringe Dress" loading="lazy" />
     </div>
-  </article>
+    <div class="cap"><span>02</span><span>Red &middot; Yellow</span></div>
+  </div>
 
-  <article class="editorial-spread">
-    <div class="grid">
-      <div>
-        <div class="number">03</div>
-        <div class="eyebrow"><span>Evening I</span></div>
-        <h3>The hour of <em>quiet ceremony.</em></h3>
-        <p>A velvet cape in deep garnet, lined in blush silk. The body underneath remains soft;
-        the surface answers the room. Worn open, it walks like water.</p>
-        <p>Worn: La Cape, Grenat, No. 16.</p>
-      </div>
-      <div class="imgph photo solo dark" data-label="03 &middot; Evening I">
-        <img src="img/purple-lace-03.jpg" alt="The Purple Lace Dress — between the lamps" loading="lazy" />
-      </div>
-    </div>
-  </article>
+  <div class="frame full">
+    <img src="img/cobalt-04.jpg" alt="The Blue Dress, poolside" loading="lazy" />
+    <div class="cap"><span>03</span><span>Poolside</span></div>
+  </div>
 
-  <article class="editorial-spread reverse">
-    <div class="grid">
-      <div class="stack-imgs">
-        <div class="imgph photo rose" data-label="04a &middot; The Red Long Dress">
-          <img src="img/orange-01.jpg" alt="The Red Long Dress — holding the sash" loading="lazy" />
-        </div>
-        <div class="imgph photo rose" data-label="04b &middot; Drape detail">
-          <img src="img/orange-06.jpg" alt="The Red Long Dress — drape held out" loading="lazy" />
-        </div>
-      </div>
-      <div>
-        <div class="number">04</div>
-        <div class="eyebrow"><span>Rose brocade</span></div>
-        <h3>The maison&rsquo;s <em>signature.</em></h3>
-        <p>Brocade woven in rose and ink, finished with a single covered button at the nape.
-        The back is left uncluttered &mdash; we believe a woman should be beautiful
-        coming and going.</p>
-        <p>Worn: Rose Brocade Gown, No. 04.</p>
-      </div>
+  <div class="frame">
+    <div class="frame-pair">
+      <img src="img/orange-01.jpg" alt="The Red Long Dress" loading="lazy" />
+      <img src="img/orange-06.jpg" alt="The Red Long Dress, drape" loading="lazy" />
     </div>
-  </article>
+    <div class="cap"><span>04</span><span>The Red Long Dress</span></div>
+  </div>
 
-  <article class="editorial-spread">
-    <div class="grid">
-      <div>
-        <div class="number">05</div>
-        <div class="eyebrow"><span>The portrait</span></div>
-        <h3>She is the <em>centre</em> of her own season.</h3>
-        <p>One frame, held longer than the others. No motion, no veil. The dress is finished;
-        the woman is unfinished &mdash; in the best way. Becoming, still. Bloom is a verb.</p>
-        <p>Worn: La Mariee, Aurore, No. 12.</p>
-      </div>
-      <div class="imgph photo solo blush" data-label="05 &middot; The portrait">
-        <img src="img/cobalt-04.jpg" alt="The Blue Dress — poolside, cocktail raised" loading="lazy" />
-      </div>
-    </div>
-  </article>
+  <div class="frame full">
+    <img src="img/purple-lace-03.jpg" alt="The Purple Lace Dress" loading="lazy" />
+    <div class="cap"><span>05</span><span>Evening</span></div>
+  </div>
 
-  <article class="editorial-spread reverse">
-    <div class="grid">
-      <div class="imgph photo solo" data-label="06 &middot; Detail">
-        <img src="img/velvet-02.jpg" alt="The Purple Velvet Gown — against the cabinetry" loading="lazy" />
-      </div>
-      <div>
-        <div class="number">06</div>
-        <div class="eyebrow"><span>Detail</span></div>
-        <h3>What the close <em>frame</em> remembers.</h3>
-        <p>A hand-stitched hem. A satin label. The small marks of the maker, kept where
-        only the wearer knows. This is where the garment becomes hers.</p>
-        <a class="link-arrow" href="contact.html">Begin a fitting &rarr;</a>
-      </div>
+  <div class="frame">
+    <div class="frame-pair">
+      <img src="img/velvet-01.jpg" alt="The Purple Velvet Gown" loading="lazy" />
+      <img src="img/lilac-mini-03.jpg" alt="The Purple Mini" loading="lazy" />
     </div>
-  </article>
+    <div class="cap"><span>06</span><span>Purple</span></div>
+  </div>
+
+  <div class="frame full">
+    <img src="img/group-05.jpg" alt="The collection, together" loading="lazy" />
+    <div class="cap"><span>07</span><span>Together</span></div>
+  </div>
 
 </section>
 
-<!-- Closing band -->
-<section class="appointment section">
+<!-- CTA -->
+<section class="band center">
   <div class="container">
-    <div>
-      <div class="eyebrow"><span>End of the lookbook</span><span class="dot"></span><span>Next, your story</span></div>
-      <h2>Bring your own <em>garden</em> to the atelier.</h2>
-      <p>
-        If a frame here held you a moment, perhaps a piece of the collection is already waiting for
-        you. Step into the atelier &mdash; the next portrait could be yours.
-      </p>
-      <div style="display:flex; gap:14px; flex-wrap:wrap;">
-        <a class="btn" href="contact.html">Book a fitting</a>
-        <a class="btn ghost" href="collections.html">View the collection</a>
-      </div>
-    </div>
-
-    <div class="appointment-card">
-      <div class="eyebrow"><span class="dot" style="background: var(--rose);"></span><span>Editorial credits</span></div>
-      <h3>This volume</h3>
-      <div class="row"><div class="lbl">Direction</div><div class="val">Roseline, founder.</div></div>
-      <div class="row"><div class="lbl">Photography</div><div class="val">By candle &amp; daylight.</div></div>
-      <div class="row"><div class="lbl">Atelier</div><div class="val">The full house team.</div></div>
-      <div class="row"><div class="lbl">Volume</div><div class="val">Royal Choice.</div></div>
-      <div class="row"><div class="lbl">Looks</div><div class="val">Six of the seventeen.</div></div>
+    <h2 class="display">See every angle.</h2>
+    <div class="cta-row">
+      <a class="btn" href="collections.html">View the collection</a>
     </div>
   </div>
 </section>
@@ -212,47 +91,21 @@
 <!-- Footer -->
 <footer class="site-footer">
   <div class="container">
-    <div class="footer-grid">
+    <div class="grid">
       <div class="brand">
-        <span class="rrc">ROSELINE&nbsp;ROSE</span>
-        <p class="tag">Couture maison for women and men. Refined, unhurried, made by hand and guided by faith.</p>
-        <p class="verse">&ldquo;She openeth her mouth with wisdom; and in her tongue is the law of kindness.&rdquo; &mdash; Proverbs 31 &middot; 26</p>
+        <span class="logo">Roseline&nbsp;Rose</span>
+        <p>Couture maison. Royal Choice &mdash; the new collection.</p>
       </div>
-      <div>
-        <h4>Maison</h4>
-        <ul>
-          <li><a href="about.html">Our story</a></li>
-          <li><a href="about.html#atelier">The atelier</a></li>
-          <li><a href="about.html#philosophy">Philosophy</a></li>
-          <li><a href="journal.html">Journal</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Collections</h4>
-        <ul>
-          <li><a href="collections.html">Royal Choice</a></li>
-          <li><a href="collections.html?cat=bridal">Bridal &amp; occasion</a></li>
-          <li><a href="collections.html?cat=men">Pour Lui</a></li>
-          <li><a href="lookbook.html">The lookbook</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="contact.html">Book a fitting</a></li>
-          <li><a href="contact.html#inquire">General inquiries</a></li>
-          <li><a href="#">Instagram &middot; @roselinerose</a></li>
-          <li><a href="mailto:atelier@roselinerose.com">atelier@roselinerose.com</a></li>
-        </ul>
-      </div>
+      <nav>
+        <a href="collections.html">Collection</a>
+        <a href="lookbook.html">Lookbook</a>
+        <a href="about.html">Atelier</a>
+        <a href="contact.html">Contact</a>
+      </nav>
     </div>
-    <div class="footer-bottom">
-      <div>&copy; 2026 Roseline Rose Couture &middot; All creations sewn by hand.</div>
-      <div class="links">
-        <a href="#">Privacy</a>
-        <a href="#">Care &amp; tailoring</a>
-        <a href="#">Site credits</a>
-      </div>
+    <div class="base">
+      <span>&copy; 2026 Roseline Rose Couture</span>
+      <span>Sewn by hand</span>
     </div>
   </div>
 </footer>
