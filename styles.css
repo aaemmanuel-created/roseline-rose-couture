@@ -121,11 +121,11 @@ a { color: inherit; text-decoration: none; }
   width: 100%;
   height: min(92vh, 980px);
   object-fit: cover;
-  object-position: center 22%;
+  object-position: center 72%;
 }
 .hero-full .scrim {
   position: absolute; inset: 0;
-  background: linear-gradient(to top, rgba(12,10,8,0.55) 0%, rgba(12,10,8,0.08) 45%, transparent 70%);
+  background: linear-gradient(to top, rgba(12,10,8,0.42) 0%, rgba(12,10,8,0.05) 42%, transparent 65%);
 }
 .hero-full .overlay {
   position: absolute;
