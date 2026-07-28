@@ -3,15 +3,17 @@
 */
 
 :root {
-  --bg:        #a9d3d0;   /* turquoise */
-  --bg-soft:   #99c7c4;
-  --paper:     #faf8f4;
-  --ink:       #12201f;
-  --ink-soft:  #35514f;
-  --ink-mute:  #5d7a78;
-  --rule:      #8dbcb9;
-  --accent:    #7a4a22;
-  --accent-deep: #603818;
+  --bg:        #f0d3cd;   /* powder rose */
+  --bg-soft:   #e7c2ba;
+  --paper:     #fffdfb;
+  --ink:       #241a18;
+  --ink-soft:  #5b4741;
+  --ink-mute:  #8d746c;
+  --rule:      #dcbdb5;
+  --accent:    #8a4b34;
+  --accent-deep: #6d3826;
+  --frame:     #fffdfb;   /* photo border */
+  --radius:    14px;
 
   --display: "Italiana", serif;
   --sans:    "Jost", "Helvetica Neue", Arial, sans-serif;
@@ -44,7 +46,7 @@ body {
 img { max-width: 100%; display: block; }
 a { color: inherit; text-decoration: none; }
 
-/* — Grain over the turquoise — */
+/* — Grain over the ground — */
 body::after {
   content: "";
   position: fixed;
@@ -59,6 +61,55 @@ body::after {
 @media (prefers-reduced-motion: no-preference) { }
 
 .container { max-width: var(--maxw); margin: 0 auto; padding: 0 var(--gutter); }
+
+/* — White rounded frame around photography — */
+.look .ph,
+.detail-row figure,
+.pillar img,
+.split img,
+.dress .stage,
+.dress .thumbs button,
+.fabric-row .fab-img,
+.step img,
+.frame.full,
+.frame-pair img,
+.overlap .img-main,
+.overlap .img-off,
+.hero-full,
+.banner {
+  background: var(--frame);
+  padding: 10px;
+  border-radius: var(--radius);
+  box-shadow: 0 1px 2px rgba(60,35,30,0.06);
+}
+.look .ph img,
+.detail-row img,
+.pillar img,
+.split img,
+.dress .stage img,
+.dress .thumbs img,
+.fabric-row img,
+.step img,
+.frame.full img,
+.frame-pair img,
+.overlap .img-main img,
+.overlap .img-off img,
+.hero-full img,
+.banner img {
+  border-radius: calc(var(--radius) - 6px);
+}
+/* elements that are themselves the image need inner padding removed */
+.pillar img, .split img, .step img, .frame-pair img {
+  padding: 10px;
+  background: var(--frame);
+}
+.dress .thumbs button { padding: 5px; border-radius: 10px; }
+.dress .thumbs img { border-radius: 6px; }
+.detail-row figure { padding: 10px; }
+.detail-row figcaption { margin-top: 10px; }
+/* overlay text sits inside the frame */
+.hero-full .scrim, .banner .scrim { border-radius: calc(var(--radius) - 6px); inset: 10px; }
+.overlap .img-off { border: 0; }
 
 /* — Type — */
 .eyebrow {
@@ -79,7 +130,7 @@ body::after {
 /* — Header — */
 .topbar {
   position: sticky; top: 0; z-index: 60;
-  background: rgba(169,211,208,0.93);
+  background: rgba(240,211,205,0.93);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--rule);
 }
@@ -241,8 +292,13 @@ body::after {
   .hero-split .txt { order: -1; }
 }
 
-/* — Full-bleed hero — */
-.hero-full { position: relative; }
+/* — Framed hero — */
+.hero-full {
+  position: relative;
+  max-width: var(--maxw);
+  margin: clamp(14px, 2vw, 26px) auto 0;
+  width: calc(100% - (2 * var(--gutter)));
+}
 .hero-full img {
   width: 100%;
   height: min(92vh, 980px);
@@ -255,7 +311,7 @@ body::after {
 }
 .hero-full .overlay {
   position: absolute;
-  left: 0; right: 0; bottom: clamp(36px, 7vh, 90px);
+  left: 10px; right: 10px; bottom: clamp(36px, 7vh, 90px);
   text-align: center;
   color: #fff;
   padding: 0 var(--gutter);
@@ -452,7 +508,12 @@ body::after {
 }
 
 /* — Wide banner image — */
-.banner { position: relative; }
+.banner {
+  position: relative;
+  max-width: var(--maxw);
+  margin-left: auto; margin-right: auto;
+  width: calc(100% - (2 * var(--gutter)));
+}
 .banner img {
   width: 100%;
   height: clamp(380px, 62vh, 680px);
@@ -464,7 +525,7 @@ body::after {
   background: rgba(12,10,8,0.32);
 }
 .banner .overlay {
-  position: absolute; inset: 0;
+  position: absolute; inset: 10px;
   display: flex; flex-direction: column;
   align-items: center; justify-content: center;
   gap: 20px;
@@ -786,6 +847,7 @@ body::after {
   align-items: center;
 }
 .lb-stage img {
+  border-radius: 10px;
   max-width: 100%;
   max-height: 78vh;
   object-fit: contain;
