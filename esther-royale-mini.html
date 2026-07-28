@@ -19,6 +19,7 @@
       <a class="active" href="collections.html">Collection</a>
       <a href="lookbook.html">Lookbook</a>
       <a href="bespoke.html">Bespoke</a>
+      <a href="fabrics.html">Fabrics</a>
       <a href="about.html">The Story</a>
       <a href="contact.html">Contact</a>
     </nav>
@@ -118,6 +119,19 @@
 })();
 </script>
 
+
+<section class="newsletter">
+  <div class="container">
+    <h3>The house letter</h3>
+    <p>First word on new pieces, private appointments and the next collection.</p>
+    <form onsubmit="event.preventDefault(); this.querySelector('.done').hidden=false; this.querySelector('input').value='';">
+      <input type="email" placeholder="Your email" aria-label="Your email" required />
+      <button type="submit" class="btn">Subscribe</button>
+      <p class="done" hidden style="width:100%;">Thank you &mdash; you are on the list.</p>
+    </form>
+  </div>
+</section>
+
 <footer class="site-footer">
   <div class="container">
     <div class="grid">
@@ -129,6 +143,7 @@
         <a href="collections.html">Collection</a>
         <a href="lookbook.html">Lookbook</a>
         <a href="bespoke.html">Bespoke</a>
+        <a href="fabrics.html">Fabrics</a>
         <a href="about.html">The Story</a>
         <a href="contact.html">Contact</a>
       </nav>
