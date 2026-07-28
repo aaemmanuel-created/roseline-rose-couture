@@ -13,6 +13,7 @@
   --accent:    #8a4b34;
   --accent-deep: #6d3826;
   --frame:     #fffdfb;   /* photo border */
+  --frame-dark: #2f3438;  /* space grey — look cards */
   --radius:    14px;
 
   --display: "Italiana", serif;
@@ -102,6 +103,11 @@ body::after {
 .pillar img, .split img, .step img, .frame-pair img {
   padding: 10px;
   background: var(--frame);
+}
+/* look cards get a dark space-grey frame */
+.look .ph {
+  background: var(--frame-dark);
+  box-shadow: 0 2px 10px rgba(30,34,38,0.14);
 }
 .dress .thumbs button { padding: 5px; border-radius: 10px; }
 .dress .thumbs img { border-radius: 6px; }
