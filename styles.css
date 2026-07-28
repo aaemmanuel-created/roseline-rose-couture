@@ -118,7 +118,8 @@ a { color: inherit; text-decoration: none; }
 /* — Hero: whole photo, text laid over it — */
 .hero-photo {
   position: relative;
-  max-width: var(--maxw);
+  width: fit-content;
+  max-width: 100%;
   margin: 0 auto;
 }
 .hero-photo > img {
