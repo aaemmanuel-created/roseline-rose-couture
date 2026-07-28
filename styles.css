@@ -115,6 +115,52 @@ a { color: inherit; text-decoration: none; }
 .btn.light { background: var(--bg); color: var(--ink); }
 .btn.light:hover { background: var(--bg-soft); }
 
+/* — Hero: whole photo, text laid over it — */
+.hero-photo {
+  position: relative;
+  max-width: var(--maxw);
+  margin: 0 auto;
+}
+.hero-photo > img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.hero-photo .scrim {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(to bottom, rgba(10,8,6,0.30) 0%, rgba(10,8,6,0.05) 26%, transparent 46%),
+    linear-gradient(to top, rgba(10,8,6,0.52) 0%, rgba(10,8,6,0.10) 30%, transparent 52%);
+}
+.hero-photo .overlay {
+  position: absolute;
+  left: 0; right: 0; bottom: clamp(20px, 5vw, 64px);
+  text-align: center;
+  color: #fff;
+  padding: 0 var(--gutter);
+  text-shadow: 0 2px 26px rgba(8,6,4,0.5);
+}
+.hero-photo .overlay .eyebrow { color: rgba(255,255,255,0.9); margin-bottom: 12px; }
+.hero-photo .overlay h1 {
+  font-size: clamp(44px, 8vw, 118px);
+  color: #fff;
+  line-height: 0.98;
+}
+.hero-photo .overlay .note {
+  margin: 12px auto 22px;
+  font-size: clamp(10px, 1.1vw, 13px);
+  letter-spacing: 0.16em;
+  color: rgba(255,255,255,0.92);
+}
+.hero-photo .ctas { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.btn.line.light-line { border-color: #fff; color: #fff; }
+.btn.line.light-line:hover { background: #fff; color: var(--ink); }
+@media (max-width: 640px) {
+  .hero-photo .overlay { bottom: 14px; }
+  .hero-photo .ctas .btn { padding: 12px 18px; font-size: 9.5px; letter-spacing: 0.2em; }
+  .hero-photo .overlay .note { margin-bottom: 14px; }
+}
+
 /* — Split hero (full photo, no crop) — */
 .hero-split {
   display: grid;
