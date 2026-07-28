@@ -124,7 +124,10 @@ a { color: inherit; text-decoration: none; }
 .hero-photo > img {
   width: 100%;
   height: auto;
+  max-height: calc(100svh - 118px);
+  object-fit: contain;
   display: block;
+  margin: 0 auto;
 }
 .hero-photo .scrim {
   position: absolute; inset: 0;
