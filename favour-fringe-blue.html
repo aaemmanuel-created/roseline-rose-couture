@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The Favour Fringe Gown - Pale blue — Roseline Rose Couture</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+<link rel="icon" href="monogram.svg" type="image/svg+xml" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="topbar">
+  <div class="inner">
+    <a class="logo" href="index.html"><svg class="monogram" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M38 34 v52"/><path d="M38 34 h16 a13 13 0 0 1 0 26 h-16"/><path d="M52 60 l14 26"/><g class="second"><path d="M62 34 v52"/><path d="M62 34 h16 a13 13 0 0 1 0 26 h-16"/><path d="M76 60 l14 26"/></g></svg> Roseline&nbsp;Rose</a>
+    <nav class="menu" aria-label="Primary">
+      <a class="active" href="collections.html">Collection</a>
+      <a href="lookbook.html">Lookbook</a>
+      <a href="bespoke.html">Bespoke</a>
+      <a href="about.html">The Story</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="container">
+  <p style="padding-top:26px; font-size:var(--t-micro); letter-spacing:0.26em; text-transform:uppercase; color:var(--ink-mute);">
+    <a href="collections.html">Collection</a> &nbsp;/&nbsp; The Favour Fringe Gown
+  </p>
+
+  <div class="dress">
+    <div>
+      <div class="stage"><img id="stageImg" src="img/fringe-blue-01.jpg" alt="The Favour Fringe Gown" /></div>
+      <div class="thumbs">
+        <button type="button" data-src="img/fringe-blue-01.jpg" class="on"><img src="img/fringe-blue-01.jpg" alt="The Favour Fringe Gown, view 1" loading="lazy" /></button>
+      </div>
+    </div>
+
+    <div class="info">
+      <div class="eyebrow">Royal Choice</div>
+      <h1 class="display">The Favour Fringe Gown</h1>
+      <div class="variant-line">Pale blue</div>
+      <div class="price">&pound;75</div>
+      <div class="made">Made to order &middot; six to ten weeks</div>
+
+      <p style="font-size:var(--t-body); color:var(--ink-soft); letter-spacing:0.05em; margin:0;">The fringe line, in pale blue.</p>
+
+      <div class="notes">
+        <div class="row"><span class="k">Fabric</span><span class="v">Ruched jersey</span></div>
+        <div class="row"><span class="k">Cut</span><span class="v">Halter neck, hand-cut fringe hem</span></div>
+        <div class="row"><span class="k">Finish</span><span class="v">Hand-finished hem</span></div>
+        <div class="row"><span class="k">Made</span><span class="v">To order, in London</span></div>
+        <div class="row"><span class="k">Fittings</span><span class="v">Up to three</span></div>
+      </div>
+
+      <details class="enquire">
+        <summary>Register interest</summary>
+        <div class="panel">
+          <p class="note-small">Each piece is cut for one wearer. Tell us your size and the date, and we reply within two working days.</p>
+          <form class="form-grid" onsubmit="event.preventDefault(); this.querySelector('.sent').hidden=false;">
+            <div class="field"><label for="q-name">Name</label><input id="q-name" type="text" required /></div>
+            <div class="field"><label for="q-email">Email</label><input id="q-email" type="email" required /></div>
+            <div class="field">
+              <label for="q-size">Size</label>
+              <select id="q-size">
+            <option>UK 6</option>
+            <option>UK 8</option>
+            <option>UK 10</option>
+            <option>UK 12</option>
+            <option>UK 14</option>
+            <option>UK 16</option>
+            <option>UK 18</option>
+            <option>Made to my measurements</option>
+              </select>
+            </div>
+            <div class="field"><label for="q-date">Event date</label><input id="q-date" type="date" /></div>
+            <div class="field wide"><label for="q-occasion">Occasion</label><input id="q-occasion" type="text" placeholder="Wedding, bridal shower, gala" /></div>
+            <div class="field wide"><label for="q-msg">Anything else</label><textarea id="q-msg" rows="3"></textarea></div>
+            <div class="wide">
+              <button type="submit" class="btn">Send enquiry</button>
+              <p class="sent" hidden>Received. We reply within two working days.</p>
+            </div>
+          </form>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="band soft center">
+  <div class="container">
+    <div class="eyebrow" style="margin-bottom:16px;">Made to your measure</div>
+    <h2 class="display">Every piece, cut for one wearer.</h2>
+    <div class="cta-row">
+      <a class="btn line" href="bespoke.html">The bespoke process</a>
+      <a class="btn line" href="collections.html">Back to the collection</a>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  var stage=document.getElementById('stageImg');
+  document.querySelectorAll('.thumbs button').forEach(function(b){
+    b.addEventListener('click',function(){
+      stage.src=b.getAttribute('data-src');
+      document.querySelectorAll('.thumbs button').forEach(function(x){x.classList.remove('on');});
+      b.classList.add('on');
+    });
+  });
+})();
+</script>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="grid">
+      <div class="brand">
+        <span class="logo"><svg class="monogram" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M38 34 v52"/><path d="M38 34 h16 a13 13 0 0 1 0 26 h-16"/><path d="M52 60 l14 26"/><g class="second"><path d="M62 34 v52"/><path d="M62 34 h16 a13 13 0 0 1 0 26 h-16"/><path d="M76 60 l14 26"/></g></svg> Roseline&nbsp;Rose</span>
+        <p>Couture maison. Royal Choice &mdash; the new collection.</p>
+      </div>
+      <nav>
+        <a href="collections.html">Collection</a>
+        <a href="lookbook.html">Lookbook</a>
+        <a href="bespoke.html">Bespoke</a>
+        <a href="about.html">The Story</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+    <div class="base">
+      <span>&copy; 2026 Roseline Rose Couture</span>
+      <span>Sewn by hand</span>
+    </div>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+</body>
+</html>
