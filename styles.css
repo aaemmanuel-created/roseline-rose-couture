@@ -3,14 +3,15 @@
 */
 
 :root {
-  --bg:        #faf8f4;
-  --bg-soft:   #f3efe8;
-  --ink:       #16130f;
-  --ink-soft:  #4c443c;
-  --ink-mute:  #8d8177;
-  --rule:      #e6dfd3;
-  --accent:    #8d5a2e;
-  --accent-deep: #6e441f;
+  --bg:        #a9d3d0;   /* turquoise */
+  --bg-soft:   #99c7c4;
+  --paper:     #faf8f4;
+  --ink:       #12201f;
+  --ink-soft:  #35514f;
+  --ink-mute:  #5d7a78;
+  --rule:      #8dbcb9;
+  --accent:    #7a4a22;
+  --accent-deep: #603818;
 
   --display: "Italiana", serif;
   --sans:    "Jost", "Helvetica Neue", Arial, sans-serif;
@@ -43,6 +44,20 @@ body {
 img { max-width: 100%; display: block; }
 a { color: inherit; text-decoration: none; }
 
+/* — Grain over the turquoise — */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 150;
+  pointer-events: none;
+  opacity: 0.42;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='220' height='220' filter='url(%23n)' opacity='0.5'/></svg>");
+  background-size: 220px 220px;
+}
+@media (prefers-reduced-motion: no-preference) { }
+
 .container { max-width: var(--maxw); margin: 0 auto; padding: 0 var(--gutter); }
 
 /* — Type — */
@@ -64,7 +79,7 @@ a { color: inherit; text-decoration: none; }
 /* — Header — */
 .topbar {
   position: sticky; top: 0; z-index: 60;
-  background: rgba(250,248,244,0.92);
+  background: rgba(169,211,208,0.93);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--rule);
 }
@@ -137,7 +152,7 @@ a { color: inherit; text-decoration: none; }
   letter-spacing: 0.32em;
   text-transform: uppercase;
   background: var(--ink);
-  color: var(--bg);
+  color: var(--paper);
   transition: background 0.25s;
 }
 .btn:hover { background: var(--ink-soft); }
@@ -147,8 +162,8 @@ a { color: inherit; text-decoration: none; }
   border: 1px solid var(--ink);
 }
 .btn.line:hover { background: var(--ink); color: var(--bg); }
-.btn.light { background: var(--bg); color: var(--ink); }
-.btn.light:hover { background: var(--bg-soft); }
+.btn.light { background: var(--paper); color: var(--ink); }
+.btn.light:hover { background: #fff; }
 
 /* — Hero: whole photo, text laid over it — */
 .hero-photo {
@@ -718,7 +733,7 @@ a { color: inherit; text-decoration: none; }
   padding: 16px 34px;
   font-size: 11px; font-weight: 500;
   letter-spacing: 0.32em; text-transform: uppercase;
-  background: var(--ink); color: var(--bg);
+  background: var(--ink); color: var(--paper);
   transition: background 0.25s;
 }
 .enquire summary::-webkit-details-marker { display: none; }
