@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
 <link rel="icon" href="monogram.svg" type="image/svg+xml" />
-<link rel="stylesheet" href="styles.css?v=20260728k" />
+<link rel="stylesheet" href="styles.css?v=20260728l" />
 </head>
 <body>
 
@@ -48,25 +48,47 @@
       <h2 class="display">The looks.</h2>
       <a class="all" href="collections.html">View all</a>
     </div>
-    <div class="looks-grid">
-      <a class="look" href="esther-royale-blue.html">
-        <div class="ph"><img src="img/cobalt-01.jpg" alt="The Esther Royale Gown" loading="lazy" /><span class="count">3 photos</span></div>
-        <div class="name">The Esther Royale Gown</div>
-        <div class="price">&pound;185</div>
-        <div class="spec">Sparkle-knit jersey &middot; made to order in London</div>
-      </a>
-      <a class="look" href="victory-dress.html">
-        <div class="ph"><img src="img/orange-01.jpg" alt="The Victory Dress" loading="lazy" /><span class="count">5 photos</span></div>
-        <div class="name">The Victory Dress</div>
-        <div class="price">&pound;185</div>
-        <div class="spec">Textured jacquard &middot; made to order in London</div>
-      </a>
-      <a class="look" href="majesty-gown.html">
-        <div class="ph"><img src="img/velvet-01.jpg" alt="The Majesty Gown" loading="lazy" /><span class="count">4 photos</span></div>
-        <div class="name">The Majesty Gown</div>
-        <div class="price">&pound;175</div>
-        <div class="spec">Floral lace &middot; made to order in London</div>
-      </a>
+    <div class="rail-wrap">
+      <button class="rail-nav rail-prev" type="button" aria-label="Previous">&#8592;</button>
+      <div class="rail" id="looksRail">
+        <a class="look" href="esther-royale-blue.html">
+          <div class="ph"><img src="img/cobalt-01.jpg" alt="The Esther Royale Gown" loading="lazy" /></div>
+          <div class="name">The Esther Royale Gown</div>
+          <div class="price">&pound;185</div>
+          <div class="sizes">UK 6 &middot; 8 &middot; 10 &middot; 12 &middot; 14 &middot; 16 &middot; 18</div>
+        </a>
+        <a class="look" href="victory-dress.html">
+          <div class="ph"><img src="img/orange-01.jpg" alt="The Victory Dress" loading="lazy" /></div>
+          <div class="name">The Victory Dress</div>
+          <div class="price">&pound;185</div>
+          <div class="sizes">UK 6 &middot; 8 &middot; 10 &middot; 12 &middot; 14 &middot; 16 &middot; 18</div>
+        </a>
+        <a class="look" href="esther-royale-purple.html">
+          <div class="ph"><img src="img/purple-lace-02.jpg" alt="The Esther Royale Gown, purple" loading="lazy" /></div>
+          <div class="name">The Esther Royale Gown</div>
+          <div class="price">&pound;175</div>
+          <div class="sizes">UK 6 &middot; 8 &middot; 10 &middot; 12 &middot; 14 &middot; 16 &middot; 18</div>
+        </a>
+        <a class="look" href="majesty-gown.html">
+          <div class="ph"><img src="img/velvet-01.jpg" alt="The Majesty Gown" loading="lazy" /></div>
+          <div class="name">The Majesty Gown</div>
+          <div class="price">&pound;175</div>
+          <div class="sizes">UK 6 &middot; 8 &middot; 10 &middot; 12 &middot; 14 &middot; 16 &middot; 18</div>
+        </a>
+        <a class="look" href="esther-royale-mini.html">
+          <div class="ph"><img src="img/lilac-mini-01.jpg" alt="The Esther Royale Mini" loading="lazy" /></div>
+          <div class="name">The Esther Royale Mini</div>
+          <div class="price">&pound;150</div>
+          <div class="sizes">UK 6 &middot; 8 &middot; 10 &middot; 12 &middot; 14 &middot; 16 &middot; 18</div>
+        </a>
+        <a class="look" href="favour-fringe-gold.html">
+          <div class="ph"><img src="img/fringe-yellow-01.jpg" alt="The Favour Fringe Gown" loading="lazy" /></div>
+          <div class="name">The Favour Fringe Gown</div>
+          <div class="price">&pound;75</div>
+          <div class="sizes">UK 6 &middot; 8 &middot; 10 &middot; 12 &middot; 14 &middot; 16 &middot; 18</div>
+        </a>
+      </div>
+      <button class="rail-nav rail-next" type="button" aria-label="Next">&#8594;</button>
     </div>
   </div>
 </section>
@@ -177,6 +199,27 @@
 
 <!-- Footer -->
 
+<!-- Services -->
+<section class="container">
+  <div class="services">
+    <div class="service">
+      <h4>Client care</h4>
+      <p>Questions on sizing, delivery or care &mdash; we answer every message personally.</p>
+      <a href="contact.html">Contact us</a>
+    </div>
+    <div class="service">
+      <h4>Appointments</h4>
+      <p>An unhurried hour in the atelier, with cloth in hand and a sketch to take away.</p>
+      <a href="contact.html">Request an appointment</a>
+    </div>
+    <div class="service">
+      <h4>Bridal &amp; occasion</h4>
+      <p>For the wedding, the shower, the day that asks for something made only for you.</p>
+      <a href="bespoke.html">Bridal services</a>
+    </div>
+  </div>
+</section>
+
 <section class="newsletter">
   <div class="container">
     <h3>The house letter</h3>
@@ -212,6 +255,15 @@
   </div>
 </footer>
 
-<script src="site.js?v=20260728k"></script>
+<script>
+(function(){
+  var rail=document.getElementById('looksRail'); if(!rail) return;
+  function step(d){ rail.scrollBy({left: d*(rail.clientWidth*0.62), behavior:'smooth'}); }
+  var p=document.querySelector('.rail-prev'), n=document.querySelector('.rail-next');
+  if(p) p.addEventListener('click',function(){step(-1);});
+  if(n) n.addEventListener('click',function(){step(1);});
+})();
+</script>
+<script src="site.js?v=20260728l"></script>
 </body>
 </html>
