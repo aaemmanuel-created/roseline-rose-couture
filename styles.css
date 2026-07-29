@@ -36,9 +36,17 @@
 html, body { margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body {
-  background: linear-gradient(to bottom, #ffffff 0%, #fdf4f2 22%, #f7e1dc 55%, var(--bg) 100%);
+  /* white through the top half of the hero, pink by the section below */
+  background-color: var(--bg);
+  background-image: linear-gradient(
+    to bottom,
+    #ffffff 0,
+    #ffffff 42vh,
+    #fdf4f2 68vh,
+    #f4dcd6 88vh,
+    var(--bg) 104vh
+  );
   background-repeat: no-repeat;
-  min-height: 100%;
   background-attachment: scroll;
   color: var(--ink);
   font-family: var(--sans);
