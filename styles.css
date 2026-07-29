@@ -12,8 +12,8 @@
   --rule:      #dcbdb5;
   --accent:    #8a4b34;
   --accent-deep: #6d3826;
-  --frame:     #2f3438;   /* photo border — space grey */
-  --frame-dark: #2f3438;  /* space grey — look cards */
+  --frame:     #fffdfb;   /* photo border — white */
+  --frame-dark: #fffdfb;  /* look cards — white */
   --radius:    14px;
 
   --display: "Italiana", serif;
@@ -37,15 +37,18 @@ html, body { margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body {
   /* white through the top half of the hero, pink by the section below */
-  background-color: var(--bg);
+  background-color: #c8aed3;
   background-image: linear-gradient(
     to bottom,
     #ffffff 0,
     #ffffff 42vh,
-    #fdf4f2 68vh,
-    #f4dcd6 88vh,
-    var(--bg) 104vh
+    #fbe7e3 72vh,
+    #f0d3cd 108vh,
+    #e6cbdb 58%,
+    #d6b8d8 80%,
+    #c8aed3 100%
   );
+  background-size: 100% 100%;
   background-repeat: no-repeat;
   background-attachment: scroll;
   color: var(--ink);
@@ -92,7 +95,7 @@ body::after {
   background: var(--frame);
   padding: 10px;
   border-radius: var(--radius);
-  box-shadow: 0 2px 10px rgba(30,34,38,0.12);
+  box-shadow: 0 2px 10px rgba(120,80,95,0.10);
 }
 .look .ph img,
 .detail-row img,
@@ -118,7 +121,7 @@ body::after {
 /* look cards keep the space-grey frame */
 .look .ph {
   background: var(--frame-dark);
-  box-shadow: 0 2px 10px rgba(30,34,38,0.14);
+  box-shadow: 0 2px 10px rgba(120,80,95,0.10);
 }
 /* the hero frame follows the page gradient: white at the top, pink at its foot */
 .hero-full {
@@ -126,9 +129,9 @@ body::after {
     to bottom,
     #ffffff 0%,
     #ffffff 34%,
-    #fdf4f2 60%,
-    #f4dcd6 82%,
-    var(--bg) 100%
+    #fdf1ee 62%,
+    #f6e0da 84%,
+    #f0d3cd 100%
   );
   box-shadow: 0 1px 3px rgba(60,35,30,0.06);
 }
