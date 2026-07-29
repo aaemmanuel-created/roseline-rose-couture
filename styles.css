@@ -365,8 +365,8 @@ body::after {
 .hero-full .ctas { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
 
 /* — Sections — */
-.band { padding: clamp(120px, 16vw, 240px) 0; }
-.band.tight { padding: clamp(84px, 11vw, 160px) 0; }
+.band { padding: clamp(56px, 7vw, 104px) 0; }
+.band.tight { padding: clamp(40px, 5vw, 72px) 0; }
 .band.soft { background: rgba(231,194,186,0.45); }
 .center { text-align: center; }
 .band h2.display { font-size: clamp(38px, 5vw, 72px); }
@@ -377,7 +377,7 @@ body::after {
   letter-spacing: 0.06em;
   color: var(--ink-soft);
 }
-.band .cta-row { margin-top: 36px; display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.band .cta-row { margin-top: 26px; display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
 
 /* — Overlap feature (ARA-style) — */
 .overlap {
@@ -410,7 +410,7 @@ body::after {
   align-items: baseline;
   justify-content: space-between;
   gap: 20px;
-  margin-bottom: clamp(28px, 4vw, 48px);
+  margin-bottom: clamp(18px, 2.4vw, 30px);
 }
 .looks-head h2 { font-size: clamp(30px, 3.6vw, 52px); }
 .looks-head .all {
@@ -425,7 +425,7 @@ body::after {
 .looks-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: clamp(48px, 7vw, 110px) clamp(24px, 4vw, 64px);
+  gap: clamp(30px, 4vw, 56px) clamp(20px, 3vw, 40px);
 }
 .looks-grid.wide { grid-template-columns: repeat(2, 1fr); }
 .look {
@@ -456,7 +456,7 @@ body::after {
   backdrop-filter: blur(4px);
 }
 .look .name {
-  margin-top: 22px;
+  margin-top: 14px;
   text-align: center;
   font-size: 12px;
   font-weight: 400;
@@ -496,7 +496,7 @@ body::after {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: clamp(16px, 3vw, 40px);
-  margin: clamp(72px, 10vw, 150px) 0;
+  margin: clamp(36px, 5vw, 72px) 0;
 }
 .detail-row figure { margin: 0; }
 .detail-row img { width: 100%; aspect-ratio: 1/1; object-fit: cover; display: block; }
@@ -571,7 +571,7 @@ body::after {
 .banner .overlay h2 { font-size: clamp(34px, 5vw, 64px); color: #fff; }
 
 /* — Page head (inner pages) — */
-.page-head { padding: clamp(48px, 7vw, 96px) 0 clamp(20px, 3vw, 36px); text-align: center; }
+.page-head { padding: clamp(32px, 4.2vw, 60px) 0 clamp(14px, 2vw, 24px); text-align: center; }
 .page-head .eyebrow { margin-bottom: 14px; }
 .page-head h1 { font-size: clamp(44px, 7vw, 96px); }
 .page-head .sub {
@@ -583,7 +583,7 @@ body::after {
 }
 
 /* — Lookbook frames — */
-.frame { margin: clamp(40px, 6vw, 88px) 0; }
+.frame { margin: clamp(24px, 3.4vw, 48px) 0; }
 .frame img { width: 100%; object-fit: cover; }
 .frame.full img { height: clamp(420px, 80vh, 860px); object-position: center 18%; }
 .frame .cap {
@@ -701,7 +701,7 @@ body::after {
   letter-spacing: 0.5em;
   text-transform: uppercase;
   color: var(--ink);
-  margin-bottom: clamp(28px, 4vw, 52px);
+  margin-bottom: clamp(18px, 2.4vw, 30px);
 }
 
 /* — Pillars (image + caption link) — */
@@ -730,7 +730,7 @@ body::after {
 .pillar:hover .cap span { border-color: var(--ink); }
 
 /* — Newsletter — */
-.newsletter { border-top: 1px solid var(--rule); padding: clamp(56px, 7vw, 96px) 0; text-align: center; }
+.newsletter { border-top: 1px solid var(--rule); padding: clamp(36px, 4.5vw, 64px) 0; text-align: center; }
 .newsletter h3 {
   font-family: var(--display); font-weight: 400;
   font-size: var(--d-3); margin: 0 0 8px;
@@ -753,7 +753,7 @@ body::after {
   grid-template-columns: 1fr 1fr;
   gap: clamp(28px, 5vw, 80px);
   align-items: center;
-  margin: clamp(56px, 8vw, 120px) 0;
+  margin: clamp(32px, 4.5vw, 64px) 0;
 }
 .fabric-row:nth-child(even) .fab-img { order: 2; }
 .fabric-row img { width: 100%; aspect-ratio: 1/1; object-fit: cover; }
@@ -916,7 +916,7 @@ body::after {
   grid-template-columns: repeat(3, 1fr);
   gap: clamp(28px, 5vw, 80px);
   border-top: 1px solid var(--rule);
-  padding: clamp(48px, 6vw, 88px) 0;
+  padding: clamp(32px, 4vw, 56px) 0;
 }
 .service h4 {
   font-family: var(--display);
@@ -947,7 +947,7 @@ body::after {
 /* — Section divider: hairline with the house monogram — */
 .rule {
   max-width: var(--maxw);
-  margin: 0 auto;
+  margin: clamp(10px, 1.4vw, 20px) auto;
   padding: 0 var(--gutter);
 }
 .rule .inner {
