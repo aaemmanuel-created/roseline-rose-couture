@@ -36,7 +36,8 @@
 html, body { margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body {
-  background: var(--bg);
+  background: linear-gradient(to bottom, #ffffff 0%, #fdf4f2 22%, #f7e1dc 55%, var(--bg) 100%);
+  background-attachment: fixed;
   color: var(--ink);
   font-family: var(--sans);
   font-weight: 300;
@@ -344,7 +345,7 @@ body::after {
 /* — Sections — */
 .band { padding: clamp(120px, 16vw, 240px) 0; }
 .band.tight { padding: clamp(84px, 11vw, 160px) 0; }
-.band.soft { background: var(--bg-soft); }
+.band.soft { background: rgba(231,194,186,0.45); }
 .center { text-align: center; }
 .band h2.display { font-size: clamp(38px, 5vw, 72px); }
 .band .sub {
@@ -635,7 +636,7 @@ body::after {
 .site-footer {
   border-top: 1px solid var(--rule);
   padding: clamp(44px, 6vw, 80px) 0 32px;
-  background: var(--bg);
+  background: transparent;
 }
 .site-footer .grid {
   display: flex;
