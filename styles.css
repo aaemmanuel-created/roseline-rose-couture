@@ -943,6 +943,31 @@ body::after {
 .service a:hover { color: var(--ink); border-color: var(--ink); }
 @media (max-width: 860px) { .services { grid-template-columns: 1fr; gap: 40px; } }
 
+
+/* — Section divider: hairline with the house monogram — */
+.rule {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+.rule .inner {
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 3vw, 34px);
+}
+.rule .line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--rule) 22%, var(--rule) 78%, transparent);
+}
+.rule .mark {
+  width: 22px; height: 22px;
+  flex: none;
+  opacity: 0.55;
+  color: var(--ink-soft);
+}
+.rule.plain .mark { display: none; }
+
 /* — Lightbox — */
 .lightbox {
   position: fixed; inset: 0;
