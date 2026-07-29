@@ -37,16 +37,16 @@ html, body { margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body {
   /* white through the top half of the hero, pink by the section below */
-  background-color: #c8aed3;
+  background-color: #e2c6db;
   background-image: linear-gradient(
     to bottom,
     #ffffff 0,
     #ffffff 42vh,
     #fbe7e3 72vh,
     #f0d3cd 108vh,
-    #e6cbdb 58%,
-    #d6b8d8 80%,
-    #c8aed3 100%
+    #e9cede 46%,
+    #e2c6db 62%,
+    #e2c6db 100%
   );
   background-size: 100% 100%;
   background-repeat: no-repeat;
