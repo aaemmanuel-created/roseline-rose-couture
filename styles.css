@@ -120,10 +120,17 @@ body::after {
   background: var(--frame-dark);
   box-shadow: 0 2px 10px rgba(30,34,38,0.14);
 }
-/* the hero — Royal Choice — stays white */
+/* the hero frame follows the page gradient: white at the top, pink at its foot */
 .hero-full {
-  background: var(--paper);
-  box-shadow: 0 1px 3px rgba(60,35,30,0.08);
+  background: linear-gradient(
+    to bottom,
+    #ffffff 0%,
+    #ffffff 34%,
+    #fdf4f2 60%,
+    #f4dcd6 82%,
+    var(--bg) 100%
+  );
+  box-shadow: 0 1px 3px rgba(60,35,30,0.06);
 }
 .dress .thumbs button { padding: 5px; border-radius: 10px; }
 .dress .thumbs img { border-radius: 6px; }
