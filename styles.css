@@ -228,15 +228,15 @@ body::after {
 .gold {
   background-image: linear-gradient(
     100deg,
-    #9a6b1f 0%,
-    #c9971f 14%,
-    #f0d27a 26%,
-    #fff6d8 34%,
-    #f0d27a 42%,
-    #c9971f 56%,
-    #9a6b1f 70%,
-    #c9971f 86%,
-    #9a6b1f 100%
+    #8a5c17 0%,
+    #a9761b 14%,
+    #c99a2e 26%,
+    #e8c86a 34%,
+    #cca23a 42%,
+    #a9761b 56%,
+    #8a5c17 70%,
+    #a9761b 86%,
+    #8a5c17 100%
   );
   background-size: 200% auto;
   background-repeat: repeat;
