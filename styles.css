@@ -333,7 +333,9 @@ body::after {
   object-position: center 72%;
 }
 .hero-full .scrim {
-  position: absolute; inset: 0;
+  position: absolute;
+  inset: 10px;
+  border-radius: calc(var(--radius) - 6px);
   background: linear-gradient(to top, rgba(12,10,8,0.42) 0%, rgba(12,10,8,0.05) 42%, transparent 65%);
 }
 .hero-full .overlay {
@@ -548,7 +550,9 @@ body::after {
   object-position: center 25%;
 }
 .banner .scrim {
-  position: absolute; inset: 0;
+  position: absolute;
+  inset: 10px;
+  border-radius: calc(var(--radius) - 6px);
   background: rgba(12,10,8,0.32);
 }
 .banner .overlay {
