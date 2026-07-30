@@ -329,7 +329,7 @@ body::after {
   width: 100%;
   height: min(92vh, 980px);
   object-fit: cover;
-  object-position: center 72%;
+  object-position: center 40%;
 }
 .hero-full .scrim {
   position: absolute;
@@ -357,6 +357,25 @@ body::after {
   color: rgba(255,255,255,0.88);
 }
 .hero-full .ctas { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+/* the photo lands first, then the words arrive */
+@keyframes heroRise {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes scrimIn { from { opacity: 0; } to { opacity: 1; } }
+.hero-full .scrim { animation: scrimIn 900ms ease 420ms both; }
+.hero-full .overlay > * {
+  opacity: 0;
+  animation: heroRise 900ms cubic-bezier(.22,.61,.36,1) both;
+}
+.hero-full .overlay > .eyebrow { animation-delay: 620ms; }
+.hero-full .overlay > h1       { animation-delay: 780ms; }
+.hero-full .overlay > .note    { animation-delay: 980ms; }
+.hero-full .overlay > .ctas    { animation-delay: 1140ms; }
+@media (prefers-reduced-motion: reduce) {
+  .hero-full .scrim, .hero-full .overlay > * { animation: none; opacity: 1; transform: none; }
+}
 
 /* — Sections — */
 .band { padding: clamp(56px, 7vw, 104px) 0; }
