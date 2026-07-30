@@ -213,6 +213,12 @@ body::after {
   position: relative;
 }
 .menu a:hover { color: var(--ink); }
+.menu a { white-space: nowrap; }
+/* seven items: tighten before they wrap */
+@media (max-width: 1240px) {
+  .menu { gap: clamp(12px, 1.8vw, 24px); }
+  .menu a { font-size: 10px; letter-spacing: 0.18em; }
+}
 
 /* — Gold shimmer (Partner) — */
 @keyframes goldShimmer {
