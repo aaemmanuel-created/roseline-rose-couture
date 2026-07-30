@@ -144,17 +144,17 @@ body::after {
   );
   box-shadow: 0 2px 10px rgba(120,80,95,0.10);
 }
-/* the hero frame carries the page gradient */
+/* the hero frame — white to pink only, no mauve, no grey shadow */
 .hero-full {
   background: linear-gradient(
     to bottom,
     #ffffff 0%,
-    #fdf4f1 28%,
-    #f6e0da 56%,
-    #f0d3cd 76%,
-    #e2c6db 100%
+    #ffffff 30%,
+    #fdf1ed 58%,
+    #f7e2dc 80%,
+    #f0d3cd 100%
   );
-  box-shadow: 0 1px 3px rgba(60,35,30,0.06);
+  box-shadow: 0 2px 12px rgba(214,160,150,0.18);
 }
 .dress .thumbs button { padding: 5px; border-radius: 10px; background: linear-gradient(
     to bottom,
