@@ -458,7 +458,7 @@ body::after {
   letter-spacing: 0.05em;
   color: #5b4741;
 }
-.looks-grid.limited { grid-template-columns: repeat(4, 1fr); max-width: none; }
+.looks-grid.limited { grid-template-columns: repeat(5, 1fr); max-width: none; gap: clamp(12px, 1.4vw, 20px); }
 .looks-grid.limited .variant {
   text-align: center;
   font-size: var(--t-micro);
@@ -466,33 +466,6 @@ body::after {
   text-transform: uppercase;
   color: var(--ink-mute);
   margin-top: 6px;
-}
-/* the wide fringe frame under the grid */
-.lim-wide {
-  display: block;
-  margin-top: clamp(26px, 3.4vw, 44px);
-  background: var(--frame);
-  padding: 10px;
-  border-radius: var(--radius);
-  box-shadow: 0 2px 12px rgba(214,160,150,0.18);
-}
-.lim-wide img {
-  width: 100%;
-  height: clamp(300px, 46vh, 520px);
-  object-fit: cover;
-  object-position: center 32%;
-  border-radius: calc(var(--radius) - 6px);
-  display: block;
-}
-.lim-wide .cap {
-  display: flex;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 12px 6px 2px;
-  font-size: var(--t-micro);
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-  color: var(--ink-mute);
 }
 @media (max-width: 900px) {
   .looks-grid.limited { grid-template-columns: repeat(2, 1fr); }
