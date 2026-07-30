@@ -12,8 +12,8 @@
   --rule:      #dcbdb5;
   --accent:    #8a4b34;
   --accent-deep: #6d3826;
-  --frame:     #f0cfc8;   /* photo border — one pink */
-  --frame-dark: #f0cfc8;  /* look cards — same pink */
+  --frame:     #fffdfb;   /* photo border — one white */
+  --frame-dark: #fffdfb;  /* look cards — same white */
   --radius:    14px;
 
   --display: "Italiana", serif;
@@ -36,17 +36,16 @@
 html, body { margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body {
-  /* white through the top half of the hero, pink by the section below */
-  background-color: #e2c6db;
+  /* pink at the top, bleeding to white further down */
+  background-color: #ffffff;
   background-image: linear-gradient(
     to bottom,
-    #ffffff 0,
-    #ffffff 42vh,
-    #fbe7e3 72vh,
-    #f0d3cd 108vh,
-    #e9cede 46%,
-    #e2c6db 62%,
-    #e2c6db 100%
+    #f0cfc8 0,
+    #f0cfc8 34vh,
+    #f6e0da 62vh,
+    #fbeeea 86vh,
+    #ffffff 108vh,
+    #ffffff 100%
   );
   background-size: 100% 100%;
   background-repeat: no-repeat;
@@ -157,7 +156,7 @@ body::after {
   position: -webkit-sticky;
   position: sticky;
   top: 0; z-index: 60;
-  background: rgba(255,255,255,0.96);
+  background: rgba(244,216,210,0.94);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--rule);
 }
