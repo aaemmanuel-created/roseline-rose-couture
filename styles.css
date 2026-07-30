@@ -458,12 +458,22 @@ body::after {
   color: #fff;
 }
 .hero-full .overlay .note {
-  margin: 14px auto 26px;
+  margin: 16px auto 8px;
   max-width: 560px;
   font-size: 13px;
-  letter-spacing: 0.12em;
-  line-height: 1.9;
-  color: rgba(255,255,255,0.88);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  text-align: center;
+  color: rgba(255,255,255,0.92);
+}
+.hero-full .overlay .verses {
+  margin: 0 auto 26px;
+  max-width: 560px;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  line-height: 1.85;
+  text-align: center;
+  color: rgba(255,255,255,0.78);
 }
 .hero-full .ctas { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
 
@@ -481,7 +491,8 @@ body::after {
 .hero-full .overlay > .eyebrow { animation-delay: 620ms; }
 .hero-full .overlay > h1       { animation-delay: 780ms; }
 .hero-full .overlay > .note    { animation-delay: 980ms; }
-.hero-full .overlay > .ctas    { animation-delay: 1140ms; }
+.hero-full .overlay > .verses  { animation-delay: 1080ms; }
+.hero-full .overlay > .ctas    { animation-delay: 1240ms; }
 @media (prefers-reduced-motion: reduce) {
   .hero-full .scrim, .hero-full .overlay > * { animation: none; opacity: 1; transform: none; }
 }
