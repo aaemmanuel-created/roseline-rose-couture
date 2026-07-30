@@ -156,7 +156,7 @@ body::after {
   position: -webkit-sticky;
   position: sticky;
   top: 0; z-index: 60;
-  background: rgba(244,216,210,0.94);
+  background: rgba(255,255,255,0.96);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--rule);
 }
