@@ -636,7 +636,7 @@ body::after {
   letter-spacing: 0.05em;
   color: #5b4741;
 }
-.looks-grid.limited { grid-template-columns: repeat(5, 1fr); max-width: none; gap: clamp(12px, 1.4vw, 20px); }
+.looks-grid.limited { grid-template-columns: repeat(4, 1fr); max-width: none; gap: clamp(14px, 1.6vw, 24px); }
 .looks-grid.limited .variant {
   text-align: center;
   font-size: var(--t-micro);
