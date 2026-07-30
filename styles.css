@@ -381,23 +381,21 @@ body::after {
 .band { padding: clamp(56px, 7vw, 104px) 0; }
 .band.tight { padding: clamp(40px, 5vw, 72px) 0; }
 .band.soft { background: rgba(231,194,186,0.45); }
-/* — Space grey band (Limited Collection) — */
-.band.grey {
-  background: #4a4d52;
-  color: #fffdfb;
+/* — Warm pink band (Limited Collection) — */
+.band.blush {
+  background: #f0cabf;
+  color: var(--ink);
 }
-.band.grey .looks-head h2,
-.band.grey .txt h2,
-.band.grey h2.display { color: #fffdfb; }
-.band.grey .looks-head .all {
-  color: rgba(255, 253, 251, 0.80);
-  border-bottom-color: rgba(255, 253, 251, 0.45);
+.band.blush .looks-head h2,
+.band.blush .txt h2,
+.band.blush h2.display { color: var(--ink); }
+.band.blush .looks-head .all {
+  color: var(--ink-soft);
+  border-bottom-color: rgba(90, 62, 54, 0.45);
 }
-.band.grey .looks-head .all:hover { color: #fff; border-bottom-color: #fff; }
-.band.grey .eyebrow { color: rgba(255, 253, 251, 0.62); }
-.band.grey .txt p { color: rgba(255, 253, 251, 0.80); }
-.band.grey .btn { background: #fffdfb; color: #241a18; }
-.band.grey .btn:hover { background: rgba(255, 253, 251, 0.82); color: #241a18; }
+.band.blush .looks-head .all:hover { color: var(--ink); border-bottom-color: var(--ink); }
+.band.blush .eyebrow { color: #8a5f53; }
+.band.blush .txt p { color: #5b4741; }
 .center { text-align: center; }
 .band h2.display { font-size: clamp(38px, 5vw, 72px); }
 .band .sub {
