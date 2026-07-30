@@ -451,7 +451,17 @@ body::after {
     #f7ddd5 100%);
 }
 /* the divider between them carries the same pink so the run-in is unbroken */
-.rule.on-blush { background: #f7ddd5; }
+.rule.on-blush {
+  background: #f7ddd5;
+  max-width: none;
+  margin: 0;
+  padding: clamp(10px, 1.4vw, 20px) 0;
+}
+.rule.on-blush .inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
 .lim-note {
   margin: -6px 0 clamp(22px, 3vw, 34px);
   max-width: 460px;
