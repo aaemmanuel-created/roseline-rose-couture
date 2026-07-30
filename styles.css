@@ -335,7 +335,7 @@ body::after {
   position: absolute;
   inset: 10px;
   border-radius: calc(var(--radius) - 6px);
-  background: linear-gradient(to top, rgba(12,10,8,0.42) 0%, rgba(12,10,8,0.05) 42%, transparent 65%);
+  background: linear-gradient(to top, rgba(16,12,10,0.60) 0%, rgba(16,12,10,0.26) 40%, rgba(16,12,10,0.04) 68%, transparent 84%);
 }
 .hero-full .overlay {
   position: absolute;
