@@ -10,11 +10,24 @@
 
   var buyBlocks = document.querySelectorAll("[data-buy]");
   var cartBtns = document.querySelectorAll("[data-cart-open]");
+  var counts = document.querySelectorAll("[data-cart-count]");
 
-  if (!ready) return;                        // nothing shows until configured
+  function setCount(n) {
+    counts.forEach(function (el) {
+      el.textContent = n;
+      el.hidden = !n;
+    });
+  }
+
+  // Until the store is set up, the basket icon simply leads to the collection.
+  if (!ready) {
+    cartBtns.forEach(function (b) {
+      b.addEventListener("click", function () { window.location.href = "collections.html"; });
+    });
+    return;
+  }
 
   buyBlocks.forEach(function (el) { el.hidden = false; });
-  cartBtns.forEach(function (el) { el.hidden = false; });
 
   var SDK = "https://sdks.shopifycdn.com/buy-button/latest/buybutton.js";
 
@@ -68,7 +81,17 @@
         },
         toggle: { styles: { toggle: { "background-color": "#241a18" } } }
       }
-    }).then(function (c) { cart = c; });
+    }).then(function (c) { cart = c; refreshCount(); });
+
+    function refreshCount() {
+      try {
+        var model = cart && cart.model;
+        var n = model && (model.lineItemCount != null
+          ? model.lineItemCount
+          : (model.lineItems || []).reduce(function (t, li) { return t + (li.quantity || 0); }, 0));
+        setCount(n || 0);
+      } catch (e) { /* leave the badge as it is */ }
+    }
 
     function openCart() { if (cart) cart.open(); }
     cartBtns.forEach(function (b) { b.addEventListener("click", openCart); });
@@ -118,6 +141,7 @@
               button.textContent = old;
               button.classList.remove("is-added");
             }, 1800);
+            refreshCount();
             openCart();
           });
         });

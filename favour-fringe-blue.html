@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
 <link rel="icon" href="monogram.svg" type="image/svg+xml" />
-<link rel="stylesheet" href="styles.css?v=20260730u" />
+<link rel="stylesheet" href="styles.css?v=20260730v" />
 </head>
 <body>
 
@@ -23,7 +23,10 @@
       <a href="fabrics.html">Fabrics</a>
       <a href="about.html">The Story</a>
       <a href="contact.html">Contact</a>
-      <button class="cart-link" type="button" data-cart-open hidden>Basket</button>
+      <button class="cart-btn" type="button" data-cart-open aria-label="Basket">
+        <svg class="cart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 7.5h15l-1.2 12a1.6 1.6 0 0 1-1.6 1.5H7.3a1.6 1.6 0 0 1-1.6-1.5z"/><path d="M8.6 10V6.4a3.4 3.4 0 0 1 6.8 0V10"/></svg>
+        <span class="cart-count" data-cart-count hidden>0</span>
+      </button>
     </nav>
   </div>
 </header>
@@ -172,9 +175,9 @@
   </div>
 </footer>
 
-<script src="shop-config.js?v=20260730u"></script>
-<script src="shop.js?v=20260730u"></script>
-<script src="site.js?v=20260730u"></script>
+<script src="shop-config.js?v=20260730v"></script>
+<script src="shop.js?v=20260730v"></script>
+<script src="site.js?v=20260730v"></script>
 <div id="shopify-cart"></div>
 </body>
 </html>

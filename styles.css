@@ -255,23 +255,40 @@ body::after {
 @supports not ((-webkit-background-clip: text) or (background-clip: text)) {
   .gold { color: #b8860b; -webkit-text-fill-color: #b8860b; background-image: none; animation: none; }
 }
-/* — Basket link in the header — */
-.cart-link {
-  font-family: var(--sans);
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: var(--ink);
+/* — Basket icon in the header — */
+.cart-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   background: none;
   border: 0;
-  border-bottom: 1px solid var(--ink);
-  padding: 4px 0;
+  padding: 2px;
+  margin-left: 2px;
+  color: var(--ink-soft);
   cursor: pointer;
-  white-space: nowrap;
+  line-height: 0;
+  transition: color 0.25s;
 }
-.cart-link:hover { color: var(--accent); border-bottom-color: var(--accent); }
-@media (max-width: 1240px) { .cart-link { font-size: 10px; letter-spacing: 0.18em; } }
+.cart-btn:hover { color: var(--ink); }
+.cart-icon { width: 21px; height: 21px; display: block; }
+.cart-count {
+  position: absolute;
+  top: -5px; right: -8px;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 4px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fffdfb;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  line-height: 16px;
+  text-align: center;
+}
+@media (max-width: 1240px) { .cart-icon { width: 19px; height: 19px; } }
+@media (max-width: 720px)  { .cart-btn { margin-left: 4px; } }
 
 /* — Add to basket, on the dress pages — */
 .buy {
