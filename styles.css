@@ -329,7 +329,7 @@ body::after {
   width: 100%;
   height: min(92vh, 980px);
   object-fit: cover;
-  object-position: center 40%;
+  object-position: center 72%;
 }
 .hero-full .scrim {
   position: absolute;
