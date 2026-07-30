@@ -213,6 +213,42 @@ body::after {
   position: relative;
 }
 .menu a:hover { color: var(--ink); }
+
+/* — Gold shimmer (Partner) — */
+@keyframes goldShimmer {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+.gold {
+  background-image: linear-gradient(
+    100deg,
+    #9a6b1f 0%,
+    #c9971f 14%,
+    #f0d27a 26%,
+    #fff6d8 34%,
+    #f0d27a 42%,
+    #c9971f 56%,
+    #9a6b1f 70%,
+    #c9971f 86%,
+    #9a6b1f 100%
+  );
+  background-size: 200% auto;
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: goldShimmer 5.5s linear infinite;
+}
+.menu a.gold { font-weight: 500; }
+.menu a.gold:hover,
+.menu a.gold.active { color: transparent; filter: brightness(1.12); }
+@media (prefers-reduced-motion: reduce) {
+  .gold { animation: none; background-position: 30% 50%; }
+}
+@supports not ((-webkit-background-clip: text) or (background-clip: text)) {
+  .gold { color: #b8860b; -webkit-text-fill-color: #b8860b; background-image: none; animation: none; }
+}
 .menu a.active { color: var(--ink); }
 .menu a.active::after {
   content: ""; position: absolute; left: 0; right: 0; bottom: -3px;
@@ -568,6 +604,19 @@ body::after {
   color: var(--accent);
   margin-bottom: 14px;
 }
+/* the three vows, set inside the Story column under the button */
+.values3.stacked {
+  grid-template-columns: 1fr;
+  gap: clamp(20px, 2.4vw, 30px);
+  text-align: left;
+  margin-top: clamp(30px, 3.6vw, 46px);
+  padding-top: clamp(24px, 3vw, 36px);
+  border-top: 1px solid var(--rule);
+  max-width: 460px;
+}
+.values3.stacked .n { margin-bottom: 6px; }
+.values3.stacked h3 { font-size: clamp(19px, 1.7vw, 23px); margin-bottom: 6px; }
+.values3.stacked p { font-size: 12.5px; }
 
 /* — Wide banner image — */
 .banner {
