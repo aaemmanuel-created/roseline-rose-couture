@@ -1049,6 +1049,18 @@ body::after {
   .hero-full img { height: 76vh; }
 }
 @media (max-width: 720px) {
+  /* header is locked to the top of the screen, never scrolls with the page */
+  .topbar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    width: 100%;
+    background: #ffffff;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    will-change: auto;
+  }
+  body { padding-top: var(--topbar-h, 92px); }
+  [id] { scroll-margin-top: calc(var(--topbar-h, 92px) + 14px); }
   .topbar .inner {
     flex-direction: column;
     gap: 8px;

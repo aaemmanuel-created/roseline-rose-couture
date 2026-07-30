@@ -1,3 +1,19 @@
+/* Roseline Rose — measure the fixed header so the page starts below it */
+(function () {
+  var bar = document.querySelector(".topbar");
+  if (!bar) return;
+  function setH() {
+    document.documentElement.style.setProperty(
+      "--topbar-h", Math.ceil(bar.getBoundingClientRect().height) + "px"
+    );
+  }
+  setH();
+  window.addEventListener("resize", setH);
+  window.addEventListener("orientationchange", function () { setTimeout(setH, 220); });
+  if (document.fonts && document.fonts.ready) { document.fonts.ready.then(setH); }
+  window.addEventListener("load", setH);
+})();
+
 /* Roseline Rose — reveal on scroll */
 (function () {
   var targets = document.querySelectorAll(
