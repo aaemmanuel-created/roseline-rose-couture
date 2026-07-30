@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
 <link rel="icon" href="monogram.svg" type="image/svg+xml" />
-<link rel="stylesheet" href="styles.css?v=20260730r" />
+<link rel="stylesheet" href="styles.css?v=20260730s" />
 </head>
 <body>
 
@@ -23,6 +23,7 @@
       <a href="fabrics.html">Fabrics</a>
       <a href="about.html">The Story</a>
       <a href="contact.html">Contact</a>
+      <button class="cart-link" type="button" data-cart-open hidden>Basket</button>
     </nav>
   </div>
 </header>
@@ -57,6 +58,25 @@
         <div class="row"><span class="k">Finish</span><span class="v">Hand-finished hem</span></div>
         <div class="row"><span class="k">Made</span><span class="v">To order, in London</span></div>
         <div class="row"><span class="k">Fittings</span><span class="v">Up to three</span></div>
+      </div>
+
+
+      <div class="buy" data-buy="esther-royale-purple" hidden>
+        <div class="buy-row">
+          <label class="buy-field">
+            <span>Size</span>
+            <select data-size>
+              <option>UK 6</option><option>UK 8</option><option>UK 10</option>
+              <option>UK 12</option><option>UK 14</option><option>UK 16</option><option>UK 18</option>
+            </select>
+          </label>
+          <label class="buy-field">
+            <span>Event date</span>
+            <input type="date" data-event-date />
+          </label>
+        </div>
+        <button class="btn" type="button" data-add disabled>Add to basket</button>
+        <p class="buy-note" data-buy-note hidden>Added to your basket &mdash; made to order, six to ten weeks.</p>
       </div>
 
       <details class="enquire">
@@ -154,6 +174,9 @@
   </div>
 </footer>
 
-<script src="site.js?v=20260730r"></script>
+<script src="shop-config.js?v=20260730s"></script>
+<script src="shop.js?v=20260730s"></script>
+<script src="site.js?v=20260730s"></script>
+<div id="shopify-cart"></div>
 </body>
 </html>
