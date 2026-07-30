@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Contact &mdash; Roseline Rose Couture</title>
+<title>Your basket &mdash; Roseline Rose Couture</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -22,7 +22,7 @@
       <a href="bespoke.html">Bespoke</a>
       <a href="fabrics.html">Fabrics</a>
       <a href="about.html">The Story</a>
-      <a class="active" href="contact.html">Contact</a>
+      <a href="contact.html">Contact</a>
       <button class="cart-btn" type="button" data-cart-open aria-label="Basket">
         <svg class="cart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 7.5h15l-1.2 12a1.6 1.6 0 0 1-1.6 1.5H7.3a1.6 1.6 0 0 1-1.6-1.5z"/><path d="M8.6 10V6.4a3.4 3.4 0 0 1 6.8 0V10"/></svg>
         <span class="cart-count" data-cart-count hidden>0</span>
@@ -33,57 +33,38 @@
 
 <section class="page-head">
   <div class="container">
-    <div class="eyebrow">By appointment</div>
-    <h1 class="display">Book a fitting</h1>
+    <div class="eyebrow">Royal Choice</div>
+    <h1 class="display">Your basket</h1>
   </div>
 </section>
 
-<section class="band tight" id="inquire">
+<section class="band tight">
   <div class="container">
-    <div class="split" style="align-items: start;">
 
-      <form class="form-grid" onsubmit="event.preventDefault(); this.querySelector('.sent').hidden = false;">
-        <div class="field">
-          <label for="f-name">Name</label>
-          <input id="f-name" name="name" type="text" required />
-        </div>
-        <div class="field">
-          <label for="f-email">Email</label>
-          <input id="f-email" name="email" type="email" required />
-        </div>
-        <div class="field wide">
-          <label for="f-reason">Regarding</label>
-          <select id="f-reason" name="reason">
-            <option>A fitting</option>
-            <option>A bespoke commission</option>
-            <option>A bridal piece</option>
-            <option>Press</option>
-            <option>Other</option>
-          </select>
-        </div>
-        <div class="field wide">
-          <label for="f-msg">Message</label>
-          <textarea id="f-msg" name="message" rows="5" required></textarea>
-        </div>
-        <div class="wide">
-          <button type="submit" class="btn">Send</button>
-          <p class="sent" hidden style="margin-top: 20px; font-size: 13px; letter-spacing: 0.06em; color: var(--accent);">
-            Received. We reply within two working days.
-          </p>
-        </div>
-      </form>
+    <div class="basket" id="basket">
+      <div class="basket-lines" id="basketLines"></div>
 
-      <div class="txt">
-        <div class="facts" style="border-top: 1px solid var(--rule);">
-          <div class="row"><span class="k">Email</span><span>atelier@roselinerose.com</span></div>
-          <div class="row"><span class="k">Telephone</span><span>+33 1 76 42 08 90</span></div>
-          <div class="row"><span class="k">Instagram</span><span>@roselinerose</span></div>
-          <div class="row"><span class="k">Atelier</span><span>Paris &middot; Lagos, by season</span></div>
-          <div class="row"><span class="k">Open</span><span>Tuesday &ndash; Saturday, by appointment</span></div>
-        </div>
-      </div>
-
+      <aside class="basket-sum" id="basketSum" hidden>
+        <div class="row"><span>Subtotal</span><span id="basketTotal">&pound;0</span></div>
+        <p class="basket-note">
+          Made to order &middot; six to ten weeks. Shipping and any taxes are
+          calculated at checkout.
+        </p>
+        <a class="btn" id="basketCheckout" href="#">Checkout</a>
+        <a class="btn line" href="collections.html">Continue browsing</a>
+      </aside>
     </div>
+
+    <div class="basket-empty" id="basketEmpty">
+      <p class="eyebrow">Nothing here yet</p>
+      <h2 class="display">Your basket is empty.</h2>
+      <p class="sub">Every piece is cut for one wearer. Choose a gown and your size, and it will appear here.</p>
+      <div class="cta-row">
+        <a class="btn" href="collections.html">View the collection</a>
+        <a class="btn line" href="bespoke.html">Bespoke</a>
+      </div>
+    </div>
+
   </div>
 </section>
 

@@ -19,11 +19,18 @@
     });
   }
 
-  // Until the store is set up, the basket icon simply leads to the collection.
+  // The basket icon always leads to the basket page.
+  cartBtns.forEach(function (b) {
+    b.addEventListener("click", function () { window.location.href = "basket.html"; });
+  });
+
+  var basketPage = document.getElementById("basketLines");
+
   if (!ready) {
-    cartBtns.forEach(function (b) {
-      b.addEventListener("click", function () { window.location.href = "collections.html"; });
-    });
+    if (basketPage) {
+      document.getElementById("basket").hidden = true;
+      document.getElementById("basketEmpty").hidden = false;
+    }
     return;
   }
 
@@ -81,7 +88,7 @@
         },
         toggle: { styles: { toggle: { "background-color": "#241a18" } } }
       }
-    }).then(function (c) { cart = c; refreshCount(); });
+    }).then(function (c) { cart = c; refreshCount(); renderBasket(); });
 
     function refreshCount() {
       try {
@@ -94,7 +101,62 @@
     }
 
     function openCart() { if (cart) cart.open(); }
-    cartBtns.forEach(function (b) { b.addEventListener("click", openCart); });
+
+    /* — the basket page — */
+    function money(n, code) {
+      var sym = code === "GBP" || !code ? "£" : "";
+      return sym + Number(n).toFixed(2).replace(/\.00$/, "");
+    }
+
+    function renderBasket() {
+      if (!basketPage) return;
+      var model = cart && cart.model;
+      var lines = (model && model.lineItems) || [];
+      var wrap = document.getElementById("basket");
+      var empty = document.getElementById("basketEmpty");
+      var sum = document.getElementById("basketSum");
+
+      if (!lines.length) {
+        wrap.hidden = true;
+        empty.hidden = false;
+        return;
+      }
+      empty.hidden = true;
+      wrap.hidden = false;
+      sum.hidden = false;
+
+      basketPage.innerHTML = "";
+      lines.forEach(function (li) {
+        var v = li.variant || {};
+        var img = (v.image && v.image.src) || "";
+        var attrs = (li.customAttributes || [])
+          .map(function (a) { return a.key + ": " + a.value; })
+          .join(" · ");
+        var row = document.createElement("div");
+        row.className = "basket-line";
+        row.innerHTML =
+          '<div class="bl-img">' + (img ? '<img src="' + img + '" alt="" />' : "") + "</div>" +
+          '<div class="bl-txt">' +
+            '<div class="bl-name">' + (li.title || "") + "</div>" +
+            '<div class="bl-var">' + (v.title && v.title !== "Default Title" ? v.title : "") + "</div>" +
+            (attrs ? '<div class="bl-attr">' + attrs + "</div>" : "") +
+            '<button class="bl-remove" type="button">Remove</button>' +
+          "</div>" +
+          '<div class="bl-price">' + money((v.price && v.price.amount) || v.price || 0) + "</div>";
+        row.querySelector(".bl-remove").addEventListener("click", function () {
+          cart.model.updateLineItem(li.id, 0).then(function () {
+            refreshCount();
+            renderBasket();
+          });
+        });
+        basketPage.appendChild(row);
+      });
+
+      var total = (model.subtotalPrice && model.subtotalPrice.amount) || model.subtotalPrice || 0;
+      document.getElementById("basketTotal").textContent = money(total);
+      var go = document.getElementById("basketCheckout");
+      if (model.webUrl) go.setAttribute("href", model.webUrl);
+    }
 
     /* — one buy block per dress page — */
     buyBlocks.forEach(function (block) {
@@ -142,7 +204,7 @@
               button.classList.remove("is-added");
             }, 1800);
             refreshCount();
-            openCart();
+            renderBasket();
           });
         });
       }).catch(function (e) {
