@@ -169,15 +169,19 @@ body::after {
   margin: 0 auto;
 }
 .logo {
-  font-family: var(--display);
-  font-size: 21px;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  white-space: nowrap;
   display: inline-flex;
   align-items: center;
-  gap: 12px;
+  line-height: 0;
 }
+/* the signature, used as the house mark */
+.logo .sig {
+  height: 46px;
+  width: auto;
+  display: block;
+}
+.site-footer .logo .sig { height: 40px; }
+@media (max-width: 1240px) { .logo .sig { height: 40px; } }
+@media (max-width: 720px)  { .logo .sig { height: 34px; } .site-footer .logo .sig { height: 34px; } }
 .monogram { width: 34px; height: 34px; flex: none; display: block; }
 .monogram .second { opacity: 0.5; }
 .site-footer .monogram { width: 28px; height: 28px; }
