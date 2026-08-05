@@ -175,13 +175,13 @@ body::after {
 }
 /* the signature, used as the house mark */
 .logo .sig {
-  height: 46px;
+  height: 54px;
   width: auto;
   display: block;
 }
-.site-footer .logo .sig { height: 40px; }
-@media (max-width: 1240px) { .logo .sig { height: 40px; } }
-@media (max-width: 720px)  { .logo .sig { height: 34px; } .site-footer .logo .sig { height: 34px; } }
+.site-footer .logo .sig { height: 48px; }
+@media (max-width: 1240px) { .logo .sig { height: 46px; } }
+@media (max-width: 720px)  { .logo .sig { height: 38px; } .site-footer .logo .sig { height: 38px; } }
 .monogram { width: 34px; height: 34px; flex: none; display: block; }
 .monogram .second { opacity: 0.5; }
 .site-footer .monogram { width: 28px; height: 28px; }
