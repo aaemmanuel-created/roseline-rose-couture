@@ -178,9 +178,9 @@ body::after {
   align-items: center;
   gap: 12px;
 }
-.monogram { width: 34px; height: 34px; flex: none; display: block; }
-.monogram .second { opacity: 0.5; }
-.site-footer .monogram { width: 28px; height: 28px; }
+.monogram { width: 46px; height: 46px; flex: none; display: block; }
+
+.site-footer .monogram { width: 40px; height: 40px; }
 .lb-mark {
   position: absolute;
   top: 24px; left: 26px;
@@ -1282,7 +1282,7 @@ body::after {
   background: linear-gradient(to right, transparent, var(--rule) 22%, var(--rule) 78%, transparent);
 }
 .rule .mark {
-  width: 22px; height: 22px;
+  width: 26px; height: 26px;
   flex: none;
   opacity: 0.55;
   color: var(--ink-soft);
