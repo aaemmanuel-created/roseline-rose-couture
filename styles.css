@@ -254,6 +254,60 @@ body::after {
 @supports not ((-webkit-background-clip: text) or (background-clip: text)) {
   .gold { color: #b8860b; -webkit-text-fill-color: #b8860b; background-image: none; animation: none; }
 }
+/* — Long-form writing (The Story) — */
+.longform {
+  max-width: 660px;
+  margin: 0 auto;
+  text-align: left;
+}
+.longform .eyebrow { text-align: center; margin-bottom: 16px; }
+.longform h2 {
+  text-align: center;
+  font-size: clamp(30px, 3.6vw, 50px);
+  line-height: 1.1;
+  margin: 0 0 clamp(28px, 3.4vw, 44px);
+}
+.longform p {
+  font-size: 15px;
+  line-height: 1.95;
+  letter-spacing: 0.012em;
+  color: var(--ink-soft);
+  margin: 0 0 22px;
+}
+.longform blockquote {
+  margin: clamp(30px, 4vw, 46px) 0;
+  padding: 0 0 0 clamp(20px, 3vw, 34px);
+  border-left: 1px solid var(--rule);
+}
+.longform blockquote p {
+  font-family: var(--display);
+  font-size: clamp(20px, 2.2vw, 26px);
+  line-height: 1.5;
+  color: var(--ink);
+  margin: 0;
+}
+.longform blockquote cite {
+  display: block;
+  margin-top: 14px;
+  font-family: var(--sans);
+  font-style: normal;
+  font-size: var(--t-micro);
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+.longform .creed {
+  margin: clamp(30px, 4vw, 46px) auto;
+  text-align: center;
+  font-family: var(--display);
+  font-size: clamp(20px, 2.2vw, 27px);
+  line-height: 1.85;
+  color: var(--ink);
+}
+@media (max-width: 560px) {
+  .longform p { font-size: 14.5px; line-height: 1.9; }
+}
+
 /* — The basket page — */
 .basket {
   display: grid;
