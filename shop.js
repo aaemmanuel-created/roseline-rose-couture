@@ -165,9 +165,17 @@
       var select = block.querySelector("[data-size]");
       var button = block.querySelector("[data-add]");
       var note = block.querySelector("[data-buy-note]");
-      if (!id || !button) { block.hidden = true; return; }
+      if (!button) { block.hidden = true; return; }
 
-      client.product.fetch(id).then(function (product) {
+      /* Shopify product handles match this site's page slugs, so we look the
+         product up by handle. An explicit ID in shop-config.js still wins, for
+         the case where a handle is ever renamed in Shopify. */
+      var lookup = id
+        ? client.product.fetch(id)
+        : client.product.fetchByHandle(slug);
+
+      lookup.then(function (product) {
+        if (!product) throw new Error("no product for handle " + slug);
         var variants = product.variants || [];
 
         // fill the size list from the real Shopify variants

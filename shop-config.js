@@ -12,29 +12,18 @@ window.SHOP_CONFIG = {
 
   /* 1. Your store's permanent Shopify address, e.g. "roseline-rose.myshopify.com"
         (Shopify admin → Settings → Domains → "myshopify.com domain") */
-  domain: "",
+  domain: "d5e648-03.myshopify.com",
 
-  /* 2. Storefront API access token
-        (Shopify admin → Settings → Apps and sales channels → Develop apps
-         → your app → API credentials → Storefront API access token) */
-  storefrontAccessToken: "",
+  /* 2. Storefront API access token — public by design. It can only read the
+        catalogue and create baskets; it cannot touch orders, customers or
+        money. Issued by the Buy Button channel (Sales channels → Buy Button
+        → create a button → Copy code). */
+  storefrontAccessToken: "a4e31eb29194a2c0c4d558c6fb045487",
 
-  /* 3. One Shopify product ID per page on this site.
-        Open a product in Shopify admin and copy the number at the end of
-        the address bar, e.g. .../products/8123456789012 → "8123456789012" */
-  products: {
-    "esther-royale-blue":   "",
-    "esther-royale-red":    "",
-    "esther-royale-purple": "",
-    "esther-royale-mini":   "",
-    "victory-dress":        "",
-    "majesty-gown":         "",
-    "favour-fringe-gold":   "",
-    "favour-fringe-red":    "",
-    "favour-fringe-blue":   "",
-    "favour-fringe-black":  "",
-    "favour-fringe-pink":   ""
-  },
+  /* 3. Product IDs are optional. The Shopify product handles match this
+        site's page names (e.g. victory-dress), so the basket finds each
+        piece by handle. Only fill one in if a handle is renamed in Shopify. */
+  products: {},
 
   /* Wording — change freely */
   addLabel: "Add to basket",
