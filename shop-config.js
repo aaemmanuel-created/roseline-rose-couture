@@ -32,6 +32,7 @@ window.SHOP_CONFIG = {
     "favour-fringe-gold":   "",
     "favour-fringe-red":    "",
     "favour-fringe-blue":   "",
+    "favour-fringe-black":  "",
     "favour-fringe-pink":   ""
   },
 
