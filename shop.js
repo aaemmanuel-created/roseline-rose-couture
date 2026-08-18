@@ -88,7 +88,21 @@
         },
         toggle: { styles: { toggle: { "background-color": "#241a18" } } }
       }
-    }).then(function (c) { cart = c; refreshCount(); renderBasket(); });
+    });
+
+    /* Resolve to the live cart component, whenever it finishes initialising.
+       ui.createComponent's promise can settle after a shopper has already
+       pressed Add, so everything that needs the cart waits on this. */
+    var cartReady = new Promise(function (resolve) {
+      (function poll(tries) {
+        var c = (ui.components && ui.components.cart && ui.components.cart[0]) || null;
+        if (c && c.model) { cart = c; return resolve(c); }
+        if (tries <= 0) return resolve(null);
+        setTimeout(function () { poll(tries - 1); }, 150);
+      })(80);
+    });
+
+    cartReady.then(function () { refreshCount(); renderBasket(); });
 
     function refreshCount() {
       try {
@@ -202,7 +216,16 @@
           }
           if (customAttributes.length) line[0].customAttributes = customAttributes;
 
-          ui.components.cart[0].model.addVariants(line).then(function () {
+          button.disabled = true;
+          cartReady.then(function (c) {
+            if (!c || !c.model) {
+              button.disabled = false;
+              console.warn("Roseline: basket not ready");
+              return;
+            }
+            return c.model.addVariants(line);
+          }).then(function () {
+            button.disabled = false;
             var old = button.textContent;
             button.textContent = cfg.addedLabel || "Added";
             button.classList.add("is-added");
