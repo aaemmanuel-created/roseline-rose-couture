@@ -1,7 +1,8 @@
 /* Roseline Rose Couture — Shopify basket
-   Uses Shopify's Buy Button JS SDK for the data and the hosted checkout,
-   but keeps the house's own buttons and type. Silent until shop-config.js
-   is filled in. */
+   Talks to Shopify's Storefront API directly through the Buy SDK's client,
+   and keeps the house's own buttons, type and basket page. Shopify's stock
+   cart widget is deliberately not used — it failed to initialise reliably.
+   Silent until shop-config.js is filled in. */
 (function () {
   "use strict";
 
@@ -11,6 +12,9 @@
   var buyBlocks = document.querySelectorAll("[data-buy]");
   var cartBtns = document.querySelectorAll("[data-cart-open]");
   var counts = document.querySelectorAll("[data-cart-count]");
+  var basketPage = document.getElementById("basketLines");
+
+  var STORE_KEY = "rrc-checkout-id";
 
   function setCount(n) {
     counts.forEach(function (el) {
@@ -23,8 +27,6 @@
   cartBtns.forEach(function (b) {
     b.addEventListener("click", function () { window.location.href = "basket.html"; });
   });
-
-  var basketPage = document.getElementById("basketLines");
 
   if (!ready) {
     if (basketPage) {
@@ -39,7 +41,7 @@
   var SDK = "https://sdks.shopifycdn.com/buy-button/latest/buybutton.js";
 
   function load(cb) {
-    if (window.ShopifyBuy && window.ShopifyBuy.UI) return cb();
+    if (window.ShopifyBuy && window.ShopifyBuy.buildClient) return cb();
     var s = document.createElement("script");
     s.async = true;
     s.src = SDK;
@@ -48,87 +50,71 @@
     document.head.appendChild(s);
   }
 
+  function money(v) {
+    var n = Number(v || 0);
+    return "£" + (n % 1 === 0 ? n.toFixed(0) : n.toFixed(2));
+  }
+
+  function readId() {
+    try { return window.localStorage.getItem(STORE_KEY); } catch (e) { return null; }
+  }
+  function writeId(id) {
+    try { window.localStorage.setItem(STORE_KEY, id); } catch (e) {}
+  }
+  function clearId() {
+    try { window.localStorage.removeItem(STORE_KEY); } catch (e) {}
+  }
+
   load(function () {
     var client = window.ShopifyBuy.buildClient({
       domain: cfg.domain,
       storefrontAccessToken: cfg.storefrontAccessToken
     });
-    var ui = window.ShopifyBuy.UI.init(client);
 
-    /* — the basket drawer, styled to the house — */
-    var cart = null;
-    ui.createComponent("cart", {
-      node: document.getElementById("shopify-cart") || undefined,
-      options: {
-        cart: {
-          startOpen: false,
-          popup: false,
-          text: {
-            title: cfg.cartLabel || "Basket",
-            empty: "Your basket is empty.",
-            button: "Checkout",
-            total: "Subtotal",
-            notice: "Made to order. Shipping and taxes calculated at checkout."
-          },
-          styles: {
-            button: {
-              "font-family": "Jost, Helvetica Neue, Arial, sans-serif",
-              "font-size": "11px",
-              "font-weight": "500",
-              "letter-spacing": "0.32em",
-              "text-transform": "uppercase",
-              "border-radius": "0",
-              "background-color": "#241a18",
-              ":hover": { "background-color": "#5b4741" }
-            },
-            title: { "font-family": "Italiana, serif", "font-weight": "400" },
-            cart: { "background-color": "#fffdfb" },
-            footer: { "background-color": "#fffdfb" }
-          }
-        },
-        toggle: { styles: { toggle: { "background-color": "#241a18" } } }
+    /* Fetch the saved basket, or start a new one. A basket that Shopify has
+       already turned into a completed order is discarded and replaced. */
+    function getCheckout() {
+      var id = readId();
+      if (!id) {
+        return client.checkout.create().then(function (co) {
+          writeId(co.id);
+          return co;
+        });
       }
-    });
-
-    /* Resolve to the live cart component, whenever it finishes initialising.
-       ui.createComponent's promise can settle after a shopper has already
-       pressed Add, so everything that needs the cart waits on this. */
-    var cartReady = new Promise(function (resolve) {
-      (function poll(tries) {
-        var c = (ui.components && ui.components.cart && ui.components.cart[0]) || null;
-        if (c && c.model) { cart = c; return resolve(c); }
-        if (tries <= 0) return resolve(null);
-        setTimeout(function () { poll(tries - 1); }, 150);
-      })(80);
-    });
-
-    cartReady.then(function () { refreshCount(); renderBasket(); });
-
-    function refreshCount() {
-      try {
-        var model = cart && cart.model;
-        var n = model && (model.lineItemCount != null
-          ? model.lineItemCount
-          : (model.lineItems || []).reduce(function (t, li) { return t + (li.quantity || 0); }, 0));
-        setCount(n || 0);
-      } catch (e) { /* leave the badge as it is */ }
+      return client.checkout.fetch(id).then(function (co) {
+        if (!co || co.completedAt) {
+          clearId();
+          return client.checkout.create().then(function (fresh) {
+            writeId(fresh.id);
+            return fresh;
+          });
+        }
+        return co;
+      }).catch(function () {
+        clearId();
+        return client.checkout.create().then(function (fresh) {
+          writeId(fresh.id);
+          return fresh;
+        });
+      });
     }
 
-    function openCart() { if (cart) cart.open(); }
+    function refresh(co) {
+      var lines = (co && co.lineItems) || [];
+      var n = lines.reduce(function (t, li) { return t + (li.quantity || 0); }, 0);
+      setCount(n);
+      if (basketPage) renderBasket(co);
+      return co;
+    }
 
     /* — the basket page — */
-    function money(n, code) {
-      var sym = code === "GBP" || !code ? "£" : "";
-      return sym + Number(n).toFixed(2).replace(/\.00$/, "");
-    }
-
-    function renderBasket() {
+    function renderBasket(co) {
       if (!basketPage) return;
-      var model = cart && cart.model;
-      var lines = (model && model.lineItems) || [];
+      var lines = (co && co.lineItems) || [];
       var wrap = document.getElementById("basket");
       var empty = document.getElementById("basketEmpty");
       var sum = document.getElementById("basketSum");
+      var go = document.getElementById("basketCheckout");
 
       if (!lines.length) {
         wrap.hidden = true;
@@ -142,10 +128,11 @@
       basketPage.innerHTML = "";
       lines.forEach(function (li) {
         var v = li.variant || {};
-        var img = (v.image && v.image.src) || "";
+        var img = (v.image && (v.image.src || v.image.url)) || "";
         var attrs = (li.customAttributes || [])
           .map(function (a) { return a.key + ": " + a.value; })
           .join(" · ");
+        var price = (v.price && v.price.amount) || v.price || 0;
         var row = document.createElement("div");
         row.className = "basket-line";
         row.innerHTML =
@@ -156,21 +143,23 @@
             (attrs ? '<div class="bl-attr">' + attrs + "</div>" : "") +
             '<button class="bl-remove" type="button">Remove</button>' +
           "</div>" +
-          '<div class="bl-price">' + money((v.price && v.price.amount) || v.price || 0) + "</div>";
+          '<div class="bl-price">' + money(price * (li.quantity || 1)) + "</div>";
         row.querySelector(".bl-remove").addEventListener("click", function () {
-          cart.model.updateLineItem(li.id, 0).then(function () {
-            refreshCount();
-            renderBasket();
-          });
+          this.disabled = true;
+          client.checkout.removeLineItems(co.id, [li.id]).then(refresh);
         });
         basketPage.appendChild(row);
       });
 
-      var total = (model.subtotalPrice && model.subtotalPrice.amount) || model.subtotalPrice || 0;
+      var total = (co.lineItemsSubtotalPrice && co.lineItemsSubtotalPrice.amount) ||
+                  (co.subtotalPrice && co.subtotalPrice.amount) || co.subtotalPrice || 0;
       document.getElementById("basketTotal").textContent = money(total);
-      var go = document.getElementById("basketCheckout");
-      if (model.webUrl) go.setAttribute("href", model.webUrl);
+      if (go && co.webUrl) go.setAttribute("href", co.webUrl);
     }
+
+    getCheckout().then(refresh).catch(function (e) {
+      console.warn("Roseline: basket unavailable", e);
+    });
 
     /* — one buy block per dress page — */
     buyBlocks.forEach(function (block) {
@@ -182,17 +171,13 @@
       if (!button) { block.hidden = true; return; }
 
       /* Shopify product handles match this site's page slugs, so we look the
-         product up by handle. An explicit ID in shop-config.js still wins, for
-         the case where a handle is ever renamed in Shopify. */
-      var lookup = id
-        ? client.product.fetch(id)
-        : client.product.fetchByHandle(slug);
+         product up by handle. An explicit ID in shop-config.js still wins. */
+      var lookup = id ? client.product.fetch(id) : client.product.fetchByHandle(slug);
 
       lookup.then(function (product) {
         if (!product) throw new Error("no product for handle " + slug);
         var variants = product.variants || [];
 
-        // fill the size list from the real Shopify variants
         if (select && variants.length) {
           select.innerHTML = "";
           variants.forEach(function (v) {
@@ -208,35 +193,36 @@
         button.addEventListener("click", function () {
           var variantId = select && select.value ? select.value : (variants[0] && variants[0].id);
           if (!variantId) return;
-          var line = [{ variantId: variantId, quantity: 1 }];
-          var customAttributes = [];
+
+          var line = { variantId: variantId, quantity: 1 };
           var date = block.querySelector("[data-event-date]");
           if (date && date.value) {
-            customAttributes.push({ key: "Event date", value: date.value });
+            line.customAttributes = [{ key: "Event date", value: date.value }];
           }
-          if (customAttributes.length) line[0].customAttributes = customAttributes;
 
           button.disabled = true;
-          cartReady.then(function (c) {
-            if (!c || !c.model) {
+          getCheckout()
+            .then(function (co) { return client.checkout.addLineItems(co.id, [line]); })
+            .then(function (co) {
+              refresh(co);
+              var old = cfg.addLabel || "Add to basket";
+              button.textContent = cfg.addedLabel || "Added";
+              button.classList.add("is-added");
+              if (note) note.hidden = false;
+              setTimeout(function () {
+                button.textContent = old;
+                button.classList.remove("is-added");
+                button.disabled = false;
+              }, 1800);
+            })
+            .catch(function (e) {
               button.disabled = false;
-              console.warn("Roseline: basket not ready");
-              return;
-            }
-            return c.model.addVariants(line);
-          }).then(function () {
-            button.disabled = false;
-            var old = button.textContent;
-            button.textContent = cfg.addedLabel || "Added";
-            button.classList.add("is-added");
-            if (note) note.hidden = false;
-            setTimeout(function () {
-              button.textContent = old;
-              button.classList.remove("is-added");
-            }, 1800);
-            refreshCount();
-            renderBasket();
-          });
+              button.textContent = "Please try again";
+              console.warn("Roseline: could not add to basket", e);
+              setTimeout(function () {
+                button.textContent = cfg.addLabel || "Add to basket";
+              }, 2500);
+            });
         });
       }).catch(function (e) {
         console.warn("Roseline: could not load product", slug, e);
