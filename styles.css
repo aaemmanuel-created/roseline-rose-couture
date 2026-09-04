@@ -23,10 +23,10 @@
   --gutter: clamp(18px, 4vw, 64px);
 
   /* one type scale — used everywhere */
-  --t-micro: 10px;   /* eyebrows, captions, nav */
-  --t-small: 11.5px; /* specs, meta */
-  --t-body:  13.5px; /* paragraphs */
-  --t-lead:  15px;   /* intro paragraphs */
+  --t-micro: 11.5px;   /* eyebrows, captions, nav */
+  --t-small: 13px; /* specs, meta */
+  --t-body:  15.5px; /* paragraphs */
+  --t-lead:  17px;   /* intro paragraphs */
   --d-1: clamp(44px, 7vw, 104px);  /* page titles */
   --d-2: clamp(34px, 4.4vw, 62px); /* section titles */
   --d-3: clamp(22px, 2.2vw, 30px); /* card titles */
@@ -217,7 +217,7 @@ body::after {
 @media (max-width: 1240px) {
   .monogram { width: 44px; height: 44px; }
   .menu { gap: clamp(12px, 1.8vw, 24px); }
-  .menu a { font-size: 10px; letter-spacing: 0.18em; }
+  .menu a { font-size: 11.5px; letter-spacing: 0.18em; }
 }
 
 /* — Gold shimmer (Partner) — */
@@ -542,7 +542,7 @@ body::after {
 }
 .hero-photo .overlay .note {
   margin: 12px auto 22px;
-  font-size: clamp(10px, 1.1vw, 13px);
+  font-size: clamp(11.5px, 1.2vw, 14px);
   letter-spacing: 0.16em;
   color: rgba(255,255,255,0.92);
 }
@@ -1434,7 +1434,7 @@ body::after {
     padding-bottom: 2px;
   }
   .menu::-webkit-scrollbar { display: none; }
-  .menu a { font-size: 10px; letter-spacing: 0.18em; white-space: nowrap; }
+  .menu a { font-size: 11.5px; letter-spacing: 0.18em; white-space: nowrap; }
   .lightbox { padding: 0; gap: 0; }
   .lb-stage { max-width: 100vw; padding: 0 8px; }
   .lb-stage img { max-height: 76vh; }
