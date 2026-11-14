@@ -24,7 +24,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
 <link rel="icon" href="monogram.svg" type="image/svg+xml" />
-<link rel="stylesheet" href="styles.css?v=20260731x" />
+<link rel="stylesheet" href="styles.css?v=20261114" />
 </head>
 <body>
 
@@ -146,10 +146,11 @@
   <div class="container">
     <h3>The house letter</h3>
     <p>First word on new pieces, private appointments and the next collection.</p>
-    <form onsubmit="event.preventDefault(); this.querySelector('.done').hidden=false; this.querySelector('input').value='';">
+    <form data-mail="letter">
       <input type="email" placeholder="Your email" aria-label="Your email" required />
       <button type="submit" class="btn">Subscribe</button>
-      <p class="done" hidden style="width:100%;">Thank you &mdash; you are on the list.</p>
+      <p class="form-note">Only for the house letter; ask us any time to take you off. See our <a href="privacy.html">privacy notice</a>.</p>
+      <p class="mail-sent" hidden role="status" style="width:100%;">Your email app should now open &mdash; press <strong>Send</strong> and we will add you. Nothing opened? Write to <a href="mailto:roselinerosecouture@hotmail.com?subject=Please%20add%20me%20to%20the%20house%20letter">roselinerosecouture@hotmail.com</a>.</p>
     </form>
   </div>
 </section>
@@ -174,7 +175,9 @@
     </div>
     <div class="base">
       <span>&copy; 2026 Roseline Rose Couture</span>
+      <nav class="legal-links" aria-label="Legal"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="returns.html">Returns</a></nav>
       <span>Sewn by hand</span>
+      <span class="trader">Roseline Rose Couture &middot; atelier in London, visits by appointment &middot; <a href="mailto:roselinerosecouture@hotmail.com">roselinerosecouture@hotmail.com</a></span>
     </div>
   </div>
 </footer>
@@ -182,6 +185,7 @@
 <script src="shop-config.js?v=20260731x"></script>
 <script src="shop.js?v=20260731x"></script>
 <script src="site.js?v=20260731x"></script>
+<script src="forms.js?v=20261114"></script>
 <div id="shopify-cart"></div>
 </body>
 </html>

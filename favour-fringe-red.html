@@ -24,7 +24,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
 <link rel="icon" href="monogram.svg" type="image/svg+xml" />
-<link rel="stylesheet" href="styles.css?v=20260731x" />
+<link rel="stylesheet" href="styles.css?v=20261114" />
 </head>
 <body>
 
@@ -92,13 +92,14 @@
         </div>
         <button class="btn" type="button" data-add disabled>Add to basket</button>
         <p class="buy-note" data-buy-note hidden>Added to your basket &mdash; <a href="basket.html">view basket</a>.</p>
+        <p class="form-note">Made to order in London. Standard sizes may be returned within 14 days of delivery; made-to-measure pieces cannot. <a href="returns.html">Returns</a> &middot; <a href="terms.html">Terms</a></p>
       </div>
 
       <details class="enquire">
         <summary>Register interest</summary>
         <div class="panel">
           <p class="note-small">Each piece is cut for one wearer. Tell us your size and the date, and we reply within two working days.</p>
-          <form class="form-grid" onsubmit="event.preventDefault(); this.querySelector('.sent').hidden=false;">
+          <form class="form-grid" data-mail="enquiry">
             <div class="field"><label for="q-name">Name</label><input id="q-name" type="text" required /></div>
             <div class="field"><label for="q-email">Email</label><input id="q-email" type="email" required /></div>
             <div class="field">
@@ -119,7 +120,8 @@
             <div class="field wide"><label for="q-msg">Anything else</label><textarea id="q-msg" rows="3"></textarea></div>
             <div class="wide">
               <button type="submit" class="btn">Send enquiry</button>
-              <p class="sent" hidden>Received. We reply within two working days.</p>
+              <p class="form-note">We use your details only to reply to you &mdash; never shared, never sold. See our <a href="privacy.html">privacy notice</a>.</p>
+              <p class="mail-sent" hidden role="status">Your email app should now open with your message written out &mdash; press <strong>Send</strong> there and it reaches us. We reply within two working days. Nothing opened? <a data-retry href="mailto:roselinerosecouture@hotmail.com">Try again</a> or write to <a href="mailto:roselinerosecouture@hotmail.com">roselinerosecouture@hotmail.com</a>.</p>
             </div>
           </form>
         </div>
@@ -157,10 +159,11 @@
   <div class="container">
     <h3>The house letter</h3>
     <p>First word on new pieces, private appointments and the next collection.</p>
-    <form onsubmit="event.preventDefault(); this.querySelector('.done').hidden=false; this.querySelector('input').value='';">
+    <form data-mail="letter">
       <input type="email" placeholder="Your email" aria-label="Your email" required />
       <button type="submit" class="btn">Subscribe</button>
-      <p class="done" hidden style="width:100%;">Thank you &mdash; you are on the list.</p>
+      <p class="form-note">Only for the house letter; ask us any time to take you off. See our <a href="privacy.html">privacy notice</a>.</p>
+      <p class="mail-sent" hidden role="status" style="width:100%;">Your email app should now open &mdash; press <strong>Send</strong> and we will add you. Nothing opened? Write to <a href="mailto:roselinerosecouture@hotmail.com?subject=Please%20add%20me%20to%20the%20house%20letter">roselinerosecouture@hotmail.com</a>.</p>
     </form>
   </div>
 </section>
@@ -183,7 +186,9 @@
     </div>
     <div class="base">
       <span>&copy; 2026 Roseline Rose Couture</span>
+      <nav class="legal-links" aria-label="Legal"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="returns.html">Returns</a></nav>
       <span>Sewn by hand</span>
+      <span class="trader">Roseline Rose Couture &middot; atelier in London, visits by appointment &middot; <a href="mailto:roselinerosecouture@hotmail.com">roselinerosecouture@hotmail.com</a></span>
     </div>
   </div>
 </footer>
@@ -191,6 +196,7 @@
 <script src="shop-config.js?v=20260731x"></script>
 <script src="shop.js?v=20260731x"></script>
 <script src="site.js?v=20260731x"></script>
+<script src="forms.js?v=20261114"></script>
 <div id="shopify-cart"></div>
 </body>
 </html>
